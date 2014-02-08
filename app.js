@@ -29,7 +29,7 @@ app.use(express.session({
 }));
 
 app.use(app.router);
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express['static'](path.join(__dirname, 'public')));
 
 // development only
 if ('development' == app.get('env')) {
@@ -40,5 +40,12 @@ require('./routes').route(app);
 
 var server = http.createServer(app).listen(app.get('port'), function(){
 	console.log('Express server listening on port ' + app.get('port'));
+});
+
+var io = require('socket.io').listen(server);
+
+io.sockets.on('connection', function(socket) {
+  socket.emit('hub:playlist', [{name: 'foo'}, {name: 'bar'}]);
+  socket.emit('client:playlist', [{name: 'foo'}, {name: 'bar'}]);
 });
 
