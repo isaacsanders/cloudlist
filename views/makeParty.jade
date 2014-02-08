@@ -10,7 +10,8 @@ block pageScripts
 block content
 	div#contentCollapser
 		div
-			h2 Party Info
+			h2 
+				span Party Info
 			div.collContent
 				div.infoBlock
 					label.infoLabel Party Name:
@@ -30,7 +31,7 @@ block content
 				div.infoBlock
 					label.infoLabel End Time:
 					input.infoForm#endTime(type="text")
-		
+				button#submitBtn.flat-button.flat-button-1(type="button", onclick="") Submit
 		div
 			h2
 				span Heading 2
