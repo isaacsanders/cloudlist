@@ -15,7 +15,7 @@
   margin: 10px;
 }
 /** main content container **/
-#contentCollapser {
+contentCollapser {
   width: 70%;
   height: 50px;
   text-align: center;
