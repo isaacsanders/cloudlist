@@ -11,7 +11,7 @@
 			}
 
 		});
-	
+
 		socket.emit('client:poll', { partyId: null });
 	})
 
