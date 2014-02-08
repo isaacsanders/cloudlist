@@ -13,7 +13,7 @@ exports.route = function (app) {
 	app.get('/hub', ph.route.get_hub);
 	app.get('/party', ph.route.get_party);
 	app.get('/addSongTest', ph.route.get_song_test);
-	app.get('/addSongTest', ph.route.get_join_party);
+	app.get('/joinParty', ph.route.get_join_party);
 	app.get('/contentCollapser', ph.route.get_content_collapser);
 	app.get('/makeParty', ph.route.get_make_party);
 };
