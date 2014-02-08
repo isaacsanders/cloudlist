@@ -4,12 +4,20 @@
  */
 
 var express = require('express');
+var stylus = require('stylus');
+var nib = require('nib');
 var routes = require('./routes');
 var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
 
 var app = express();
+
+function compile(str, path) {
+	return stylus(str)
+		.set('filename', path)
+		.use(nib())
+}
 
 // all environments
 app.set('port', process.env.PORT || 5000);
@@ -27,6 +35,12 @@ app.use(express.session({
 		maxAge: 600000000
 	}
 }));
+
+app.use(stylus.middleware(
+	{ src: __dirname + '/public'
+	, compile: compile
+	}
+));
 
 app.use(app.router);
 app.use(express['static'](path.join(__dirname, 'public')));

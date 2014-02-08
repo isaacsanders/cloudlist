@@ -4,7 +4,7 @@
    top: 30%;
    width: 100%;
    height: 70%;
-   background-color: blue;
+   background-color: #757985;
    position: absolute;
    z-index: 5;
    display: none;
@@ -24,17 +24,17 @@
 
 #musicSlider {
     left: 0;
-    background: orangered url('/resources/images/note.svg') no-repeat center;
+    background: #de6143 url('/resources/images/note.svg') no-repeat center;
     background-size: 50%;
     border-radius: 0 0 0.5em 0;
-    box-shadow: 0.2em 0.2em 0.5em;
+    /*box-shadow: 0.2em 0.2em 0.75em;*/
 }
 
 
 #pictureSlider {
     right: 0;
-    background: orangered url('/resources/images/camera.svg') no-repeat center;
+    background: #de6143 url('/resources/images/camera.svg') no-repeat center;
     background-size: 50%;
     border-radius: 0 0 0 0.5em;
-    box-shadow: -0.2em 0.2em 0.5em;
+    /*box-shadow: -0.2em 0.2em 0.75em;*/
 }

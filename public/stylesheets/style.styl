@@ -1,0 +1,83 @@
+/*
+ * Import nib
+ */
+@import 'nib'
+
+/*
+ * Grab a custom font from Google
+ */
+@import url('http://fonts.googleapis.com/css?family=Montserrat|Oswald')
+
+/*
+ * Nib provides a CSS reset
+ */
+global-reset()
+
+/*
+ * Store the main color and
+ * background color as variables
+ */
+light-back-color = #818590
+mid-back-color = #5a5e6a
+dark-back-color = #383b42
+main-red = #de6143
+main-white = #e5e8ef
+
+
+body
+    font-family 'Oswald'
+    background-color light-back-color
+    color dark-back-color
+
+.navbar
+    padding 0px 15%
+    font-size 20px
+    background-color mid-back-color
+    height 50px
+    overflow visible
+
+#brand
+    float left
+    padding 10px
+    background-color main-red
+    top 0px
+    display inline
+    color main-white
+    width 100px
+    height 30px
+    text-align center
+    font-size 24px
+
+#brand > p
+    display inline
+
+#brand-party
+    color darken(main-red, 50%)
+    display inline
+
+.divider
+    background-color dark-back-color
+    width 3px
+    top 5px
+    height 40px
+    display inline
+    margin 0px
+    position absolute
+
+.nav-user
+    float right
+    display inline
+    line-height 45px
+
+.nav-user > a
+    margin 20px
+
+a
+    color dark-back-color
+    text-decoration none
+
+// a:link.selector_name
+//     text-decoration: none
+// a:visited.selector_name { color: #xxxxxx; text-decoration: none; } 
+// a:hover.selector_name { color: #xxxxxx; text-decoration: none; } 
+// a:active.selector_name { color: #xxxxxx; text-decoration: none; } 

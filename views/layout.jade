@@ -3,10 +3,19 @@ html
 	head
 		title= title
 		link(rel='stylesheet', href='/stylesheets/main.css')
-		block stylesSeets
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		block styleSheets
 		
 		script(src='/js/jquery_2.1.0.js')
 		script(src='/js/jquery_ui_1.10.4.min.js')
 		block pageScripts
 	body
+		div.navbar
+			a#brand(href="/")
+				p#brand-party Party
+				p Hub
+			div.nav-user
+				a(href="/login") login
+				div.divider
+				a(href="/signup") signup
 		block content

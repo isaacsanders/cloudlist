@@ -1,0 +1,157 @@
+/*
+ * Import nib
+ */
+/*
+ * Grab a custom font from Google
+ */
+@import url("http://fonts.googleapis.com/css?family=Montserrat|Oswald");
+/*
+ * Nib provides a CSS reset
+ */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+body {
+  line-height: 1;
+  color: #000;
+  background: #fff;
+}
+ol,
+ul {
+  list-style: none;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+caption,
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+a img {
+  border: none;
+}
+/*
+ * Store the main color and
+ * background color as variables
+ */
+body {
+  font-family: 'Oswald';
+  background-color: #818590;
+  color: #383b42;
+}
+.navbar {
+  padding: 0px 15%;
+  font-size: 20px;
+  background-color: #5a5e6a;
+  height: 50px;
+  overflow: visible;
+}
+#brand {
+  float: left;
+  padding: 10px;
+  background-color: #de6143;
+  top: 0px;
+  display: inline;
+  color: #e5e8ef;
+  width: 100px;
+  height: 30px;
+  text-align: center;
+  font-size: 24px;
+}
+#brand > p {
+  display: inline;
+}
+#brand-party {
+  color: #7b2916;
+  display: inline;
+}
+.divider {
+  background-color: #383b42;
+  width: 3px;
+  top: 5px;
+  height: 40px;
+  display: inline;
+  margin: 0px;
+  position: absolute;
+}
+.nav-user {
+  float: right;
+  display: inline;
+  line-height: 45px;
+}
+.nav-user > a {
+  margin: 20px;
+}
+a {
+  color: #383b42;
+  text-decoration: none;
+}
