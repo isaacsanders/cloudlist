@@ -7,8 +7,10 @@
 		console.log('haha');
 		$('button.submit').click(function(){
 			var value = $('input.newSong').val();
-			console.log(value);
-			socket.emit('hub:playlist:update', {newSong:value});
+			var newSong = {};
+			newSong.name = value;
+			//put the vote in here
+			socket.emit('hub:playlist:update', {newSong:newSong});
 		});
 	})
 
