@@ -19,9 +19,13 @@ exports.clientIO = function(socket, io){
   socket.on('client:poll', function(data) {
     socket.emit('client:playlist', songlist);
   });
-	socket.on('hub:playlist:update', function(song) {
+	socket.on('hub:playlist:enqueue', function(song) {
 		songlist.push(song);
-    song.queueNumber = songlist.length;
+    socket.emit('hub:playlist', songlist);
+		io.sockets.emit('client:playlist', songlist);
+	});
+	socket.on('hub:playlist:dequeue', function() {
+		songlist.shift();
     socket.emit('hub:playlist', songlist);
 		io.sockets.emit('client:playlist', songlist);
 	});

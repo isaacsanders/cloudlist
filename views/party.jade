@@ -17,8 +17,7 @@ block pageScripts
       img.queueAlbum(src="{{albumArtworkUrl}}")
       p.songTitle {{title}} - {{artist}}
   script.songTemplate(type="text/x-handlebars")
-    div.songContainer
-      div.queueNumber {{queueNumber}}
+    li.songContainer
       img.queueAlbum(src="{{albumArtworkUrl}}")
       p.upVotes {{upvoteCount}}
       img.thumbUp(src="/resources/images/thumbUp.svg")
@@ -42,4 +41,4 @@ block content
           div#remaining
         td#endTime
 
-  div#queueContainer
+  ol#queueContainer
