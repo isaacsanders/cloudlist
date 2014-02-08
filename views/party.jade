@@ -1,0 +1,13 @@
+extends layout
+
+block stylesSeets
+	link(rel='stylesheet', href='/stylesheets/sliders.css')
+
+block pageScripts
+	script(src='/js/sliders.js')
+
+block content
+	div.sliderPane#musicPane
+	div.sliderPane#picturePane
+	div.sliderToggle#pictureSlider
+	div.sliderToggle#musicSlider

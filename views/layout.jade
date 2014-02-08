@@ -1,8 +1,12 @@
 doctype html
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
-    block pageScripts
+	head
+		title= title
+		link(rel='stylesheet', href='/stylesheets/main.css')
+		block stylesSeets
+		
+		script(src='/js/jquery_2.1.0.js')
+		script(src='/js/jquery_ui_1.10.4.min.js')
+		block pageScripts
+	body
+		block content

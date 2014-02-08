@@ -1,0 +1,40 @@
+
+
+.sliderPane {
+   top: 30%;
+   width: 100%;
+   height: 70%;
+   background-color: blue;
+   position: absolute;
+   z-index: 5;
+   display: none;
+}
+
+.sliderToggle {
+    height: 4em;
+    width: 3em;
+    padding: 0.1em;
+    background-color: red;
+    position: absolute;
+    top: 30%;
+    z-index: 10;
+    cursor: pointer;
+}
+
+
+#musicSlider {
+    left: 0;
+    background: orangered url('/resources/images/note.svg') no-repeat center;
+    background-size: 50%;
+    border-radius: 0 0 0.5em 0;
+    box-shadow: 0.2em 0.2em 0.5em;
+}
+
+
+#pictureSlider {
+    right: 0;
+    background: orangered url('/resources/images/camera.svg') no-repeat center;
+    background-size: 50%;
+    border-radius: 0 0 0 0.5em;
+    box-shadow: -0.2em 0.2em 0.5em;
+}

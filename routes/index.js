@@ -9,6 +9,7 @@ ph.route = ph.route || {};
 exports.route = function(app){
 	app.get('/', ph.route.get_index);
     app.get('/hub', ph.route.get_hub);
+	app.get('/party', ph.route.get_party);
 };
 
 exports.io = function(socket){
@@ -24,3 +25,7 @@ ph.route.get_index = function(req, res){
 ph.route.get_hub = function(req, res) {
   return res.render('hub', {title: "PartyHub Party" });
 };
+
+ph.route.get_party = function(req, res) {
+	return res.render('party', {title: "PartyHub Party" });
+}
