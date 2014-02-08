@@ -26,7 +26,7 @@ ph.route.get_index = function (req, res) {
 };
 
 ph.route.get_hub = function (req, res) {
-	return res.render('hub', {title: "PartyHub Party" });
+	return res.render('hub', {title: "Party" });
 };
 
 ph.route.get_make_party = function(req, res){
@@ -34,13 +34,13 @@ ph.route.get_make_party = function(req, res){
 };
 
 ph.route.get_party = function (req, res) {
-	return res.render('party', {title: "PartyHub Party" });
+	return res.render('party', {title: "Party" });
 };
 
 ph.route.get_song_test = function(req, res){
-	return res.render('addSongTest', {title:"PartyHub songTEST"});
+	return res.render('addSongTest', {title:"songTEST"});
 };
 
 ph.route.get_content_collapser = function(req, res) {
-	return res.render('contentCollapser', {title:"PartyHub contentCollapser"});
+	return res.render('contentCollapser', {title:"contentCollapser"});
 }
