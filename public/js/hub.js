@@ -3,4 +3,5 @@
   socket.on('hub:playlist', function(data){
     console.log(data);
   });
+  socket.emit('hub:poll', { partyId: null });
 })();
