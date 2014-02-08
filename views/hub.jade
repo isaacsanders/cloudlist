@@ -2,14 +2,15 @@ extends layout
 
 block styleSheets
   link(rel='stylesheet', href='/stylesheets/sliders.css')
+  link(rel='stylesheet', href='/stylesheets/musicPlayingTimeGrid.css')
   link(rel='stylesheet', href='/stylesheets/song.css')
 
 block pageScripts
   script(src="/js/socket.io.js")
-  script(src="/js/spotify.js")
   script(src="/js/handlebars.js")
   script(src="/js/typeahead.bundle.js")
   script(src="/js/soundcloud.js")
+  script(src="/js/musicPlayingTimeGrid.js")
   script(src="/js/hub.js")
   script.suggestionTemplate(type="text/x-handlebars")
     div.songContainer
@@ -26,6 +27,7 @@ block pageScripts
       p.songTitle {{title}} - {{artist}}
       p.downVotes {{downvoteCount}}
       img.thumbDown(src="/resources/images/thumbDown.svg")
+      img.deleteButton(src="/resources/images/deleteButton.svg")
 
 
 block content
@@ -37,17 +39,15 @@ block content
 
   div#mainPlayer
     img.playerAlbum(src="/resources/images/chance.jpg")
+    table#musicPlayingTimeGrid
+      tr
+        td#startTime
+        td#track
+          div#progressed
+          div#remaining
+        td#endTime
 
   div#queueContainer
-    div.songContainer
-      div.queueNumber 1
-      img.queueAlbum(src="/resources/images/chance.jpg")
-      p.upVotes 10
-      img.thumbUp(src="/resources/images/thumbUp.svg")
-      p.songTitle Disclosure - Latch
-      img.deleteButton(src="/resources/images/deleteButton.svg")
-      p.downVotes 0
-      img.thumbDown(src="/resources/images/thumbDown.svg")
 
   div#requestContainer
     input.newSong(style="width: 100%;" type="text")
