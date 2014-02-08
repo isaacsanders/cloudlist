@@ -1,0 +1,15 @@
+extends layout
+
+block pageScripts
+	script(src="/js/jquery_2.1.0.js")
+	script(src="/js/socket.io.js")
+	script(src="/js/spotify.js")
+	script(src="/js/addSong.js")
+
+block content
+	h1= title
+	p Party On, Party People.
+
+	ul.playlist
+	input.newSong(type="text")
+	button.submit submit
