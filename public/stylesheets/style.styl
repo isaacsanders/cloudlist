@@ -28,6 +28,7 @@ body
     font-family 'Oswald'
     background-color light-back-color
     color dark-back-color
+    text-align center
 
 .navbar
     padding 0px 15%
@@ -35,6 +36,8 @@ body
     background-color mid-back-color
     height 50px
     overflow visible
+    color main-white
+    // border-bottom:3px solid dark-back-color;
 
 #brand
     float left
@@ -58,8 +61,8 @@ body
 .divider
     background-color dark-back-color
     width 3px
-    top 5px
-    height 40px
+    top 10px
+    height 30px
     display inline
     margin 0px
     position absolute
@@ -73,11 +76,51 @@ body
     margin 20px
 
 a
-    color dark-back-color
+    color main-white
     text-decoration none
 
-// a:link.selector_name
-//     text-decoration: none
-// a:visited.selector_name { color: #xxxxxx; text-decoration: none; } 
-// a:hover.selector_name { color: #xxxxxx; text-decoration: none; } 
-// a:active.selector_name { color: #xxxxxx; text-decoration: none; } 
+.flat-button
+    margin-top: 10px;
+    margin-right: 10px;
+    padding: 14px 26px;
+    font-size: 14px;
+    line-height: 100%;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.4);
+    color: #fff;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.1s ease-in-out;
+    -webkit-transition: background 0.1s ease-in-out;
+    -moz-transition: background 0.1s ease-in-out;
+    -ms-transition: background 0.1s ease-in-out;
+    -o-transition: background 0.1s ease-in-out;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    border: none;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    height: 70px;
+
+.flat-button:active
+    padding-top: 15px;
+    margin-bottom: -1px;
+
+.flat-button, .flat-button:hover, .flat-button:active
+    outline: 0 none;
+    text-decoration: none;
+    color: #fff;
+
+.flat-button-1
+    background-color: #ef634c;
+    box-shadow: 0px 3px 0px 0px #ce503a;
+
+.flat-button-1:hover
+    background-color: #eb5137;
+
+.flat-button-1:active
+    box-shadow: 0px 1px 0px 0px #ce503a;

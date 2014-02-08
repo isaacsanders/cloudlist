@@ -1,0 +1,86 @@
+/*
+ * Grab a custom font from Google
+ */
+@import url("http://fonts.googleapis.com/css?family=Montserrat|Oswald");
+/*
+ * Store the main color and
+ * background color as variables
+ */
+.centerContainer {
+  text-align: center;
+}
+/*  Main Player Style */
+#mainPlayer {
+  background-color: #5a5e6a;
+  width: 90%;
+  max-width: 1000px;
+  height: 150px;
+  margin: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: solid;
+  border-bottom: 3px solid #383b42;
+}
+.playerAlbum {
+  height: 150px;
+  display: inline;
+  float: left;
+}
+/*  Queue Song Style */
+.songContainer {
+  background-color: #5a5e6a;
+  width: 80%;
+  max-width: 800px;
+  height: 50px;
+  margin: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: solid;
+  border-bottom: 3px solid #383b42;
+}
+.queueNumber {
+  background-color: #383b42;
+  height: 50px;
+  width: 50px;
+  color: #e5e8ef;
+  text-align: center;
+  line-height: 50px;
+  display: inline;
+  float: left;
+}
+.queueAlbum {
+  height: 50px;
+  display: inline;
+  float: left;
+}
+.upVotes {
+  display: inline;
+  float: left;
+  font-size: 25px;
+  margin: 12.5px 8.333333333333334px 12.5px 16.666666666666668px;
+}
+.thumbUp {
+  height: 40px;
+  margin: 5px;
+  display: inline;
+  float: left;
+}
+.songTitle {
+  font-size: 20px;
+  margin: 15px 16.666666666666668px;
+  overflow: hidden;
+  display: inline;
+  float: left;
+}
+.thumbDown {
+  height: 40px;
+  margin: 5px;
+  display: inline;
+  float: right;
+}
+.downVotes {
+  display: inline;
+  float: right;
+  font-size: 25px;
+  margin: 12.5px 16.666666666666668px 12.5px 8.333333333333334px;
+}

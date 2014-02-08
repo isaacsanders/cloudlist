@@ -1,0 +1,7 @@
+table#musicPlayingTimeGrid
+			tr
+				td#startTime
+				td#track
+					div#progressed
+					div#remaining
+				td#endTime

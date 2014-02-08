@@ -1,0 +1,99 @@
+
+@import 'nib'
+
+/*
+ * Grab a custom font from Google
+ */
+@import url('http://fonts.googleapis.com/css?family=Montserrat|Oswald')
+
+/*
+ * Store the main color and
+ * background color as variables
+ */
+light-back-color = #818590
+mid-back-color = #5a5e6a
+dark-back-color = #383b42
+main-red = #de6143
+main-white = #e5e8ef
+
+song-height = 50px
+player-height = 150px
+
+.centerContainer
+    text-align center
+
+/*  Main Player Style */
+#mainPlayer
+    background-color mid-back-color
+    width 90%
+    max-width 1000px
+    height player-height
+    margin 50px
+    margin-left:auto;
+    margin-right:auto;
+    border-style:solid;
+    border-bottom:3px solid dark-back-color;
+
+.playerAlbum
+    height player-height
+    display inline
+    float left
+
+
+/*  Queue Song Style */
+.songContainer
+    background-color mid-back-color
+    width 80%
+    max-width 800px
+    height song-height
+    margin 30px
+    margin-left:auto;
+    margin-right:auto;
+    border-style:solid;
+    border-bottom:3px solid dark-back-color;
+
+.queueNumber
+    background-color dark-back-color
+    height song-height
+    width song-height
+    color main-white
+    text-align center
+    line-height song-height
+    display inline
+    float left
+
+.queueAlbum
+    height song-height
+    display inline
+    float left
+
+.upVotes
+    display inline
+    float left
+    font-size (song-height * 0.5)
+    margin (song-height*0.25) (song-height/6) (song-height*0.25) (song-height/3)
+
+.thumbUp
+    height song-height * (0.8)
+    margin song-height * (0.1)
+    display inline
+    float left
+
+.songTitle
+    font-size (song-height * 0.4)
+    margin (song-height*0.3) (song-height/3)
+    overflow hidden
+    display inline
+    float left
+
+.thumbDown
+    height song-height * (0.8)
+    margin song-height * (0.1)
+    display inline
+    float right
+
+.downVotes
+    display inline
+    float right
+    font-size (song-height * 0.5)
+    margin (song-height*0.25) (song-height/3) (song-height*0.25) (song-height/6)

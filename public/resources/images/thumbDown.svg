@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="94.335815"
+   height="123.15681"
+   id="svg4383"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="thumbUp.svg">
+  <defs
+     id="defs4385" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="94.907546"
+     inkscape:cy="250.22607"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="708"
+     inkscape:window-height="423"
+     inkscape:window-x="1385"
+     inkscape:window-y="228"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata4388">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-280.09245,-659.43143)">
+    <path
+       inkscape:connector-curvature="0"
+       id="path4037-4-4-2-60-0"
+       d="m 313.17727,782.58241 c 1.193,-0.098 2.053,-1.3619 2.153,-2.0372 2.31,-15.8199 14.675,-38.0386 34.519,-44.414 l 0,-67.053 c -17.385,-2.9804 -42.874,-12.2427 -52.155,-8.948 -6.363,2.2584 -22.045,59.8884 -16.396,73.0183 2.133,4.959 22.08,4.3089 33.134,6.4055 -15.805,13.498 -14.971,34.8558 -2.542,42.6699 0.46,0.2892 0.89,0.3911 1.287,0.3585 z m 43.37,-44.1696 17.881,-2.2816 0,-67.053 -17.881,-2.3797 0,71.7143 z"
+       style="fill:#de6143;fill-opacity:1;stroke:none"
+       inkscape:export-filename="C:\Users\jonescd\Desktop\BoilerMake\designs\mainUser.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+  </g>
+</svg>

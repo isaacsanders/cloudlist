@@ -12,6 +12,7 @@ exports.route = function (app) {
 	app.get('/party', ph.route.get_party);
 	app.get('/addSongTest', ph.route.get_song_test);
 	app.get('/contentCollapser', ph.route.get_content_collapser);
+	app.get('/makeParty', ph.route.get_make_party);
 };
 
 exports.io = function (socket, io) {
@@ -26,6 +27,10 @@ ph.route.get_index = function (req, res) {
 
 ph.route.get_hub = function (req, res) {
 	return res.render('hub', {title: "PartyHub Party" });
+};
+
+ph.route.get_make_party = function(req, res){
+	return res.render('makeParty', {title: "New Party"})
 };
 
 ph.route.get_party = function (req, res) {

@@ -24,17 +24,50 @@
 
 #musicSlider {
     left: 0;
-    background: #de6143 url('/resources/images/note.svg') no-repeat center;
+    background: url('/resources/images/note.svg') no-repeat center;
     background-size: 50%;
     border-radius: 0 0 0.5em 0;
     /*box-shadow: 0.2em 0.2em 0.75em;*/
+    background-color: #de6143;
+    box-shadow: 0px 3px 0px 0px #bd4021;
+}
+
+#musicSlider:hover {
+  background-color: #dc5636;
+}
+
+#musicSlider:active {
+  background-color: #d94826;
 }
 
 
 #pictureSlider {
     right: 0;
-    background: #de6143 url('/resources/images/camera.svg') no-repeat center;
+    background: url('/resources/images/camera.svg') no-repeat center;
     background-size: 50%;
     border-radius: 0 0 0 0.5em;
     /*box-shadow: -0.2em 0.2em 0.75em;*/
+    background-color: #de6143;
+    box-shadow: 0px 3px 0px 0px #bd4021;
 }
+
+#pictureSlider:hover {
+  background-color: #dc5636;
+}
+
+#pictureSlider:active {
+  background-color: #d94826;
+}
+
+/*.flat-button-1 {
+    background-color: #ef634c;
+    box-shadow: 0px 3px 0px 0px #ce503a;
+}*/
+
+/*    .flat-button-1:hover {
+        background-color: #eb5137;
+    }
+
+    .flat-button-1:active {
+        box-shadow: 0px 1px 0px 0px #ce503a;
+    }*/

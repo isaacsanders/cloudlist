@@ -2,12 +2,14 @@
 #musicPlayingTimeGrid {
     width: 40em;
     height: 3em;
-    margin: 20em auto;
+	margin: 0 auto;
     background: black;
     color: white;
     font-weight: bold;
     text-align: center;
     vertical-align: middle;
+	position: relative;
+	top: 3.5em;
 }
 
 #track {
