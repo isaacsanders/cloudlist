@@ -91,3 +91,7 @@
   font-size: 25px;
   margin: 12.5px 16.666666666666668px 12.5px 8.333333333333334px;
 }
+input {
+  position: absolute;
+  width: 800px;
+}
