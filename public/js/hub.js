@@ -1,5 +1,5 @@
 (function($){
-  var clientId = "d215739bac728e0fe1a2c2342f83c3ad",
+  var clientId = "d215739bac728e0fe1a2c2342f83c3ad";
   streamable = function(track) { return track.streamable; };
   SC.initialize({
     client_id: clientId
@@ -14,7 +14,8 @@
       remote: {
         url :"http://api.soundcloud.com/tracks?q=%QUERY&client_id="+clientId+"&format=json&_status_code_map[302]=200",
         filter: function(tracks) {
-          return $.map($.filter(tracks, streamable), function(track) {
+          streamableTracks = tracks.filter(streamable);
+          return $.map(streamableTracks, function(track) {
             return {
               title: track.title,
               trackId: track.id,
