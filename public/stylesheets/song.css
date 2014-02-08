@@ -78,6 +78,13 @@
   display: inline;
   float: right;
 }
+.deleteButton {
+  height: 40px;
+  margin: 5px;
+  margin-left: 20px;
+  display: inline;
+  float: right;
+}
 .downVotes {
   display: inline;
   float: right;
