@@ -14,8 +14,11 @@
   right: 60%;
   margin: 10px;
 }
+.infoForm {
+  width: 20%;
+}
 /** main content container **/
-#contentCollapser {
+contentCollapser {
   width: 70%;
   height: 50px;
   text-align: center;
@@ -26,17 +29,16 @@ h2 {
   background: #de6143;
   font-size: 35px;
   margin: 7.5px;
+  margin-left: auto;
+  margin-right: auto;
   cursor: pointer;
-  width: 100%;
+  width: 60%;
   border: 0;
 }
 #contentCollapser div h2:hover {
   background-color: #dc5636;
 }
 /** content header selected **/
-#contentCollapser div h2.selected {
-  background-color: d94826;
-}
 #contentCollapser div h2.selected:hover {
   background-color: #dc5636;
 }
@@ -57,14 +59,15 @@ h2 {
   padding: 0.2em 0.5em;
 }
 #contentCollapser div h2 span {
-  width: 81%;
-  position: relative;
-  top: -0.2em;
+  width: 100%;
+  line-height: 60px;
 }
 #contentCollapser div h2 img {
   width: 40px;
   position: relative;
   margin: 5px;
+  margin-right: 20px;
+  float: right;
 /* Firefox */
   -moz-transform: rotate(180deg);
 /* Safari and Chrome */

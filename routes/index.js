@@ -9,13 +9,14 @@ ph.socket = require('./socket');
 ph.file_import.party_control = require('./partyController');
 
 exports.route = function (app) {
-	app.get('/', ph.route.get_index);
+	app.get('/', ph.route.get_landing);
 	app.get('/hub', ph.route.get_hub);
 	app.get('/party', ph.route.get_party);
 	app.get('/addSongTest', ph.route.get_song_test);
 	app.get('/joinParty', ph.route.get_join_party);
 	app.get('/contentCollapser', ph.route.get_content_collapser);
 	app.get('/makeParty', ph.route.get_make_party);
+	app.get('/landing', ph.route.get_landing);
 };
 
 exports.io = function (socket, io) {
@@ -34,6 +35,10 @@ ph.route.get_hub = function (req, res) {
 
 ph.route.get_make_party = function(req, res){
 	return ph.file_import.party_control.get_make_party(req, res);
+};
+
+ph.route.get_landing = function(req, res){
+	return res.render('landing', {title:"PartyHub"});
 };
 
 ph.route.get_party = function (req, res) {
