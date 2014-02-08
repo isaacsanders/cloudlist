@@ -1,0 +1,78 @@
+/*
+ * Grab a custom font from Google
+ */
+@import url("http://fonts.googleapis.com/css?family=Montserrat|Oswald");
+/*
+ * Store the main color and
+ * background color as variables
+ */
+.centerContainer {
+  text-align: center;
+}
+.infoLabel {
+  position: absolute;
+  right: 60%;
+  margin: 10px;
+}
+/** main content container **/
+#contentCollapser {
+  width: 70%;
+  height: 50px;
+  text-align: center;
+}
+/** content header **/
+h2 {
+  color: #7b2916;
+  background: #de6143;
+  font-size: 35px;
+  margin: 7.5px;
+  cursor: pointer;
+  width: 100%;
+  border: 0;
+}
+#contentCollapser div h2:hover {
+  background-color: #dc5636;
+}
+/** content header selected **/
+#contentCollapser div h2.selected {
+  background-color: d94826;
+}
+#contentCollapser div h2.selected:hover {
+  background-color: #dc5636;
+}
+/** content body **/
+#contentCollapser div p {
+  color: #000;
+  text-align: justify;
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+  margin: 0;
+  display: none;
+}
+/** Turn Arrow **/
+#contentCollapser div h2 span,
+#contentCollapser div h2 img {
+  display: inline-block;
+  padding: 0.2em 0.5em;
+}
+#contentCollapser div h2 span {
+  width: 81%;
+  position: relative;
+  top: -0.2em;
+}
+#contentCollapser div h2 img {
+  width: 40px;
+  position: relative;
+  margin: 5px;
+/* Firefox */
+  -moz-transform: rotate(180deg);
+/* Safari and Chrome */
+  -webkit-transform: rotate(180deg);
+/* Opera */
+  -o-transform: rotate(180deg);
+/* IE9 */
+  -ms-transform: rotate(180deg);
+/* IE6,IE7 */
+}
+/** css for when a tab is open **/
