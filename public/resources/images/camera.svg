@@ -14,7 +14,7 @@
    id="svg4383"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="New document 29">
+   sodipodi:docname="camera.svg">
   <defs
      id="defs4385" />
   <sodipodi:namedview
@@ -34,7 +34,7 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:window-width="463"
+     inkscape:window-width="708"
      inkscape:window-height="423"
      inkscape:window-x="200"
      inkscape:window-y="200"
@@ -47,7 +47,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -58,7 +58,7 @@
      transform="translate(-263,-436.72153)">
     <path
        inkscape:connector-curvature="0"
-       style="fill:#041b23;fill-opacity:1;stroke:none"
+       style="fill:#e5e8ef;fill-opacity:1;stroke:none"
        d="m 346.5312,436.72153 c -8.6179,0 -13.3789,7.2256 -15.5624,15.5626 l -4.125,15.7187 -41.2188,0 c -12.5356,0 -22.625,10.0894 -22.625,22.625 l 0,114.75 c 0,12.5356 10.0894,22.625 22.625,22.625 l 178.75,0 c 12.5356,0 22.625,-10.0894 22.625,-22.625 l 0,-114.75 c 0,-12.5356 -10.0894,-22.625 -22.625,-22.625 l -40.9375,0 -3.375,-15.7187 c -1.8058,-8.4271 -6.9442,-15.5626 -15.5625,-15.5626 l -57.9688,0 z M 375,492.00283 c 30.9114,0 55.9767,25.0574 56,55.9687 l 0,0.031 c 0,30.9279 -25.0721,56 -56,56 -30.9279,0 -56,-25.0721 -56,-56 0,-30.9279 25.0721,-56 56,-56 z m 0,16.2813 c -21.9378,0 -39.7188,17.7809 -39.7188,39.7187 0,21.9378 17.781,39.7187 39.7188,39.7187 21.9378,0 39.7188,-17.7809 39.7188,-39.7187 l 0,-0.031 c -0.017,-21.926 -17.7927,-39.6874 -39.7188,-39.6874 z"
        id="rect4302" />
   </g>
