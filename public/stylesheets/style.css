@@ -107,6 +107,7 @@ body {
   font-family: 'Oswald';
   background-color: #818590;
   color: #383b42;
+  text-align: center;
 }
 .navbar {
   padding: 0px 15%;
@@ -114,6 +115,7 @@ body {
   background-color: #5a5e6a;
   height: 50px;
   overflow: visible;
+  color: #e5e8ef;
 }
 #brand {
   float: left;
@@ -137,8 +139,8 @@ body {
 .divider {
   background-color: #383b42;
   width: 3px;
-  top: 5px;
-  height: 40px;
+  top: 10px;
+  height: 30px;
   display: inline;
   margin: 0px;
   position: absolute;
@@ -152,7 +154,7 @@ body {
   margin: 20px;
 }
 a {
-  color: #383b42;
+  color: #e5e8ef;
   text-decoration: none;
 }
 .flat-button {
