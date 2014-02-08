@@ -10,18 +10,14 @@ function initializePlayer() {
         $remaining = $("#remaining"),
         $track = $("#track");
 
-    window.songTime = {progress:0, overall: 0, barStep: 0};
+    window.songTime = {progress:0, overall: 0};
 
     // update player state
     window.updatePlayerState = (function(progressed, overallLength, isPlaying) {
 
         if (progressed >= 0 && overallLength >= 0) {
-            var barStep = Math.floor($track.width()/overallLength);
-            window.songTime = {progress: progressed, overall: overallLength, barStep: barStep};
+            window.songTime = {progress: progressed, overall: overallLength};
         }
-        // set progress bar
-        $progressed.css("width", window.songTime.barStep*window.songTime.progress+"px");
-        $remaining.css("width", window.songTime.barStep*(window.songTime.overall-window.songTime.progress)+"px");
 
         if (isPlaying) {
             window.songPlayerInterval = setInterval(incrementSongTrack, 1000);
@@ -31,7 +27,7 @@ function initializePlayer() {
         }
     });
 
-    window.updatePlayerState(0, 200, true);
+    window.updatePlayerState(0, 100, true);
 
     function incrementSongTrack() {
         var startTime = window.songTime.progress,
@@ -42,8 +38,10 @@ function initializePlayer() {
         }
         else {
             //increment progress bar animation
-            $progressed.css("width", (window.songTime.progress*window.songTime.barStep)+"px");
-            $remaining.css("width", (window.songTime.overall-window.songTime.progress)*window.songTime.barStep+"px");
+            var percentProgress = 0.9*Math.floor((window.songTime.progress/window.songTime.overall)*10000)/100;
+			console.log("HERE", percentProgress, window.songTime.progress);
+            $progressed.css("width", percentProgress+"%");
+            $remaining.css("width", (90-percentProgress)+"%");
         }
         $startTime.text(convertSecondsToSongTime(startTime));
         $endTime.text(convertSecondsToSongTime(endTime));

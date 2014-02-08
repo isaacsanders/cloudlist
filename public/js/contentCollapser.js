@@ -4,7 +4,7 @@ $(document).ready(setupTextCollapsers);
 // Setup event listeners
 function setupTextCollapsers() {
   $("#contentCollapser div").each(function(index) {
-        var $content = $("p", this).attr("id", "textContent_" + index);
+        var $content = $(".collContent", this).attr("id", "textContent_" + index);
         $("h2", this).click(function() {
             $(this).toggleClass("selected");
             tryToOpenContent($content);

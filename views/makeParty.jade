@@ -1,0 +1,44 @@
+extends layout
+
+block styleSheets
+	link(rel='stylesheet', href='/stylesheets/makeParty.css')
+
+block pageScripts
+	script(src="/js/contentCollapser.js")
+	script(src="/js/makeparty.js")
+
+block content
+	div#contentCollapser
+		div
+			h2 Party Info
+			div.collContent
+				div.infoBlock
+					label.infoLabel Party Name:
+					input.infoForm#partyName(type="text")
+				div.infoBlock
+					label.infoLabel Street Address:
+					input.infoForm#streetAddr(type="text")
+				div.infoBlock
+					label.infoLabel Zip Code:
+					input.infoForm#zipCode(type="text")
+				div.infoBlock
+					label.infoLabel Date:
+					input.infoForm#date(type="text")
+				div.infoBlock
+					label.infoLabel Start Time:
+					input.infoForm#startTime(type="text")
+				div.infoBlock
+					label.infoLabel End Time:
+					input.infoForm#endTime(type="text")
+		
+		div
+			h2
+				span Heading 2
+			p The all-natural "No Hangover Patch" helps eliminate hangover discomfort by aiding your body in processing alcohol while you drink and by replenishing essential nutrients needed for your body to function properly. This patch allows these nutrients to continue to seep into your system the entire time you are wearing the patch, similar to the traditional IV. This is why this hangover remedy actually works unlike other methods that are taken and immediately flushed out of your system with the rest of the liquid.
+			
+			
+			
+		div
+			h2
+				span Heading 3
+			p The all-natural "No Hangover Patch" helps eliminate hangover discomfort by aiding your body in processing alcohol while you drink and by replenishing essential nutrients needed for your body to function properly. This patch allows these nutrients to continue to seep into your system the entire time you are wearing the patch, similar to the traditional IV. This is why this hangover remedy actually works unlike other methods that are taken and immediately flushed out of your system with the rest of the liquid.
