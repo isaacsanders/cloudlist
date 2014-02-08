@@ -1,8 +1,8 @@
 
 #musicPlayingTimeGrid {
-    width: 40em;
+    width: 65%;
     height: 3em;
-	margin: 0 auto;
+	margin: auto;
     background: black;
     color: white;
     font-weight: bold;
@@ -20,7 +20,7 @@
 
 
 #startTime, #endTime {
-    width: 40em;
+    width: 9%;
     padding: 0.7em;
 	text-align: center;
 	font-family: sans-serif;
