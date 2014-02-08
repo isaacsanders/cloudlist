@@ -1,7 +1,9 @@
 extends layout
 
 block pageScripts
+  script(src="/js/jquery_2.1.0.js")
   script(src="/js/socket.io.js")
+  script(src="/js/spotify.js")
   script(src="/js/hub.js")
 
 block content
@@ -9,3 +11,4 @@ block content
   p Party On, Party People.
 
   ul.playlist
+  input.newSong(type="text")

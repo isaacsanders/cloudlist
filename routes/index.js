@@ -13,8 +13,17 @@ exports.route = function(app){
 };
 
 exports.io = function(socket){
-	socket.emit('hub:playlist', [{name: 'foo'}, {name: 'bar'}]);
-	socket.emit('client:playlist', [{name: 'foo'}, {name: 'bar'}]);
+  socket.on('hub:poll', function(data) {
+    socket.emit('hub:playlist', [{name: 'foo'}, {name: 'bar'}]);
+  });
+
+  socket.on('hub:playlist:update', function(data) {
+    socket.emit('client:playlist', data);
+  });
+
+  socket.on('client:poll', function(data) {
+    socket.emit('client:playlist', [{name: 'foo'}, {name: 'bar'}]);
+  });
 };
 
 
