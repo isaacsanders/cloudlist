@@ -2,17 +2,26 @@ extends layout
 
 block styleSheets
 	link(rel='stylesheet', href='/stylesheets/sliders.css')
+	link(rel='stylesheet', href='/stylesheets/musicPlayingTimeGrid.css')
 
 block pageScripts
 	script(src="/js/socket.io.js")
 	script(src="/js/spotify.js")
 	script(src='/js/sliders.js')
 	script(src="/js/party.js")
+	script(src="/js/musicPlayingTimeGrid.js")
 
 block content
+	table#musicPlayingTimeGrid
+		tr
+			td#startTime
+			td#track
+				div#progressed
+				div#remaining
+			td#endTime
 	div.sliderPane#musicPane
 	div.sliderPane#picturePane
 	div.sliderToggle#pictureSlider
 	div.sliderToggle#musicSlider
-
 	div.trackEntity#mainPlayer
+	

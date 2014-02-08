@@ -1,0 +1,45 @@
+
+#musicPlayingTimeGrid {
+    width: 40em;
+    height: 3em;
+    margin: 20em auto;
+    background: black;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#track {
+    width: 82%;
+    background: #312c2c;
+	text-align: center;
+}
+
+
+#startTime, #endTime {
+    width: 40em;
+    padding: 0.7em;
+	text-align: center;
+	font-family: sans-serif;
+	font-weight: bold;
+}
+
+#progressed, #remaining {
+    height: 0.4em;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+#progressed {
+    width: 45%;
+    background-color: #bababa;
+    border-radius: 50% 0 0 50%;
+	margin-right: 0.3em;
+}
+
+#remaining {
+    width: 45%;
+    background-color: #de6143;
+    border-radius: 0 50% 50% 0;
+}
