@@ -9,3 +9,10 @@ function Party(party){
 
 module.exports = Party;
 
+Party.save = function(party, callback){
+
+};
+
+Party.get_party_with_location = function(location, callback){
+
+}

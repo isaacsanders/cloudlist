@@ -3,8 +3,10 @@
  */
 var ph = ph || {};
 ph.route = ph.route || {};
+ph.file_import = ph.file_import || {};
 ph.socket = require('./socket');
 
+ph.file_import.party_control = require('./partyController');
 
 exports.route = function (app) {
 	app.get('/', ph.route.get_index);
@@ -31,11 +33,11 @@ ph.route.get_hub = function (req, res) {
 };
 
 ph.route.get_make_party = function(req, res){
-	return res.render('makeParty', {title: "New Party"})
+	return ph.file_import.party_control.get_make_party(req, res);
 };
 
 ph.route.get_party = function (req, res) {
-	return res.render('party', {title: "Party" });
+	return ph.file_import.party_control.get_party(req, res);
 };
 
 ph.route.get_song_test = function(req, res){
