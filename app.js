@@ -36,7 +36,7 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-require('./routes').route(app);
+routes.route(app);
 
 var server = http.createServer(app).listen(app.get('port'), function(){
 	console.log('Express server listening on port ' + app.get('port'));
@@ -44,8 +44,9 @@ var server = http.createServer(app).listen(app.get('port'), function(){
 
 var io = require('socket.io').listen(server);
 
+
+
 io.sockets.on('connection', function(socket) {
-  socket.emit('hub:playlist', [{name: 'foo'}, {name: 'bar'}]);
-  socket.emit('client:playlist', [{name: 'foo'}, {name: 'bar'}]);
+	routes.io(socket);
 });
 
