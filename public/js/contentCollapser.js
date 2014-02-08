@@ -5,7 +5,7 @@ $(document).ready(setupTextCollapsers);
 function setupTextCollapsers() {
   $("#contentCollapser div").each(function(index) {
         var $content = $(".collContent", this).attr("id", "textContent_" + index);
-        $("h2", this).click(function() {
+        $("span", this).click(function() {
             $(this).toggleClass("selected");
             tryToOpenContent($content);
         }).append("<img src='/resources/images/turnArrow.svg' />");

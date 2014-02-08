@@ -26,6 +26,8 @@ collapse-height = 50px
     right 60%
     margin 10px
 
+.infoForm
+    width 20%
 
 /** main content container **/
 contentCollapser
@@ -39,8 +41,10 @@ h2
     background main-red
     font-size (collapse-height * 0.7)
     margin (collapse-height * 0.15)
+    margin-left auto
+    margin-right auto
     cursor pointer
-    width 100%
+    width 60%
     border 0
 
 #contentCollapser div h2:hover {
@@ -49,7 +53,6 @@ h2
 
 /** content header selected **/
 #contentCollapser div h2.selected {
-    background-color d94826
 }
 
 #contentCollapser div h2.selected:hover {
@@ -73,15 +76,16 @@ h2
 }
 
 #contentCollapser div h2 span {
-    width: 81%;
-    position: relative;
-    top: -0.2em;
+    width: 100%;
+    line-height: 60px;
  }
 
 #contentCollapser div h2 img {
     width (collapse-height * 0.8)
     position: relative;
     margin (collapse-height * 0.1)
+    margin-right 20px
+    float right
 
     /* Firefox */
     -moz-transform:rotate(180deg);
