@@ -7,11 +7,40 @@ block pageScripts
   script(src="/js/typeahead.bundle.js")
   script(src="/js/soundcloud.js")
   script(src="/js/hub.js")
+  script.suggestionTemplate(type="text/x-handlebars")
+    div.songContainer
+      div.queueNumber
+        button.addSong(data-track-id="{{trackId}}") +
+      img.queueAlbum(src="{{albumArtworkUrl}}")
+      p.songTitle {{title}} - {{artist}}
+  script.songTemplate(type="text/x-handlebars")
+    div.songContainer
+      div.queueNumber {{queueNumber}}
+      img.queueAlbum(src="{{albumArtworkUrl}}")
+      p.upVotes {{upvoteCount}}
+      img.thumbUp(src="/resources/images/thumbUp.svg")
+      p.songTitle {{title}} - {{artist}}
+      p.downVotes {{downvoteCount}}
+      img.thumbDown(src="/resources/images/thumbDown.svg")
+
 
 block content
   h1= title
   p Party On, Party People.
 
+<<<<<<< HEAD
   ul.playlist
   input.newSong(type="text")
   button.submit(type= "submit") Add Song
+=======
+  div#mainPlayer
+    img.playerAlbum(src="/resources/images/chance.jpg")
+
+  div#queueContainer
+
+  input.newSong(style="width: 100%;" type="text")
+  div.songContainer
+    div.queueNumber ?
+    img.queueAlbum(src="/resources/images/missing.png")
+    p.songTitle
+>>>>>>> 1d2934a640571397058a2b8a567b2bf1fe6b1d61

@@ -1,6 +1,8 @@
 (function($){
   $(document).ready(function(){
-    var engine = new Bloodhound({
+    var songTemplate = Handlebars.compile($(".songTemplate").text()),
+    suggestionTemplate = Handlebars.compile($(".suggestionTemplate").text()),
+    engine = new Bloodhound({
       datumTokenizer: function(datum) { return Bloodhound.tokenizers.whitespace(datum); },
       queryTokenizer: Bloodhound.tokenizers.whitespace,
       name: "soundcloud",
@@ -9,9 +11,11 @@
         filter: function(tracks) {
           return $.map(tracks, function(track) {
             return {
-              name: track.title,
-              value: track.title,
-              artist: track.user.username
+              title: track.title,
+              value: track.id,
+              trackId: track.id,
+              artist: track.user.username,
+              albumArtworkUrl: track.artwork_url
             };
           });
         }
@@ -21,10 +25,7 @@
     engine.initialize();
 
     var templates = {
-      empty: Handlebars.compile("<li>No Results</li>"),
-      footer: Handlebars.compile("</ul>"),
-      header: Handlebars.compile("<ul>"),
-      suggestion: Handlebars.compile("<li><i>{{name}}</i> by {{artist}}</li>")
+      suggestion: suggestionTemplate
     };
 
     $('input.newSong').typeahead({
@@ -35,9 +36,27 @@
       templates: templates
     });
 
+
     var socket = io.connect('http://localhost:5000');
     socket.on('hub:playlist', function(data){
+      var playlistHtml = $.map(data, function(track) {
+        return songTemplate(track);
+      }).join('');
+      $('#queueContainer').html(playlistHtml);
     });
+
+    // socket.on('hub:player', function(data){
+    // });
+
+    $('button.addSong').click(function(){
+      var value = $('input.newSong.tt-input').val(),
+      newSong = {
+        name: value
+      };
+      socket.emit('hub:playlist:update', {newSong:newSong});
+      $('input.newSong.tt-input').val('');
+    });
+
     socket.emit('hub:poll', { partyId: null });
   });
 })(jQuery);
