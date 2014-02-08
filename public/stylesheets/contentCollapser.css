@@ -1,0 +1,78 @@
+
+/** main content container **/
+#contentCollapser {
+    width: 30%;
+    text-align: center;
+    margin: auto;
+}
+
+/** individual content container **/
+#contentCollapser div {
+    padding: 0.5em 0;
+    width: 100%;
+}
+
+/** content header **/
+#contentCollapser div h2 {
+    color: #000000;
+    background: #de6143;
+    margin: 1em 0;
+    cursor: pointer;
+    border: #de6143 0.15em solid;
+    width: 100%;
+}
+
+#contentCollapser div h2:hover {
+}
+
+/** content header selected **/
+#contentCollapser div h2.selected {
+    box-shadow: 0 0.2em 0.5em #111;
+    background-color: #94492d;
+    text-shadow: 0.05em 0.05em 0.03em black;
+}
+
+#contentCollapser div h2.selected:hover {
+}
+
+/** content body **/
+#contentCollapser div p {
+    color: black;
+    text-align: justify;
+    opacity: 1;
+    margin: 0;
+    display: none;
+}
+
+
+/** Turn Arrow **/
+#contentCollapser div h2 span, #contentCollapser div h2 img {
+    display: inline-block;
+    padding: 0.2em 0.5em;
+}
+
+#contentCollapser div h2 span {
+    width: 81%;
+    position: relative;
+    top: -0.2em;
+ }
+
+#contentCollapser div h2 img {
+    width: 1.2em;
+    position: relative;
+    top: 0.25em;
+
+    /* Firefox */
+    -moz-transform:rotate(180deg);
+    /* Safari and Chrome */
+    -webkit-transform:rotate(180deg);
+    /* Opera */
+    -o-transform:rotate(180deg);
+    /* IE9 */
+    -ms-transform:rotate(180deg);
+    /* IE6,IE7 */
+}
+
+/** css for when a tab is open **/
+img.isOpen {
+}

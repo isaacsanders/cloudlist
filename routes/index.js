@@ -11,6 +11,7 @@ exports.route = function (app) {
 	app.get('/hub', ph.route.get_hub);
 	app.get('/party', ph.route.get_party);
 	app.get('/addSongTest', ph.route.get_song_test);
+	app.get('/contentCollapser', ph.route.get_content_collapser);
 };
 
 exports.io = function (socket, io) {
@@ -34,3 +35,7 @@ ph.route.get_party = function (req, res) {
 ph.route.get_song_test = function(req, res){
 	return res.render('addSongTest', {title:"PartyHub songTEST"});
 };
+
+ph.route.get_content_collapser = function(req, res) {
+	return res.render('contentCollapser', {title:"PartyHub contentCollapser"});
+}
