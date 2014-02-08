@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="198.375"
+   height="198.375"
+   id="svg13509"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="New document 187">
+  <defs
+     id="defs13511" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="82.75893"
+     inkscape:cy="84.901787"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="463"
+     inkscape:window-height="423"
+     inkscape:window-x="175"
+     inkscape:window-y="175"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata13514">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-292.24107,-418.88897)">
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:#d5654b;fill-opacity:1;stroke:none"
+       d="m 391.42907,418.88897 c -54.779,0 -99.188,44.4069 -99.188,99.1875 0,54.7802 44.409,99.1875 99.188,99.1875 54.782,7e-4 99.187,-44.4073 99.187,-99.1875 0,-54.7806 -44.405,-99.1875 -99.187,-99.1875 z"
+       id="path13051" />
+    <g
+       id="g13491"
+       transform="matrix(3.470639,0,0,3.470639,978.99314,-9996.486)">
+      <rect
+         y="3016.364"
+         x="-179.40323"
+         height="26.422485"
+         width="6.8443789"
+         id="rect13471"
+         style="fill:#e5e8ef;fill-opacity:1;stroke:none" />
+      <rect
+         y="3016.364"
+         x="-166.03291"
+         height="26.422485"
+         width="6.8443789"
+         id="rect13471-0"
+         style="fill:#e5e8ef;fill-opacity:1;stroke:none" />
+    </g>
+  </g>
+</svg>

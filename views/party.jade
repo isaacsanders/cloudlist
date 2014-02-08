@@ -1,26 +1,38 @@
 extends layout
 
+block styleSheets
+	link(rel='stylesheet', href='/stylesheets/sliders.css')
+	link(rel='stylesheet', href='/stylesheets/musicPlayingTimeGrid.css')
+
 block pageScripts
-  script(src='/js/sliders.js')
-  script(src="/js/socket.io.js")
-  script(src="/js/spotify.js")
-  script(src="/js/party.js")
+	script(src="/js/socket.io.js")
+	script(src="/js/spotify.js")
+	script(src='/js/sliders.js')
+	script(src="/js/party.js")
+	script(src="/js/musicPlayingTimeGrid.js")
 
 block content
-  div.sliderPane#musicPane
-  div.sliderPane#picturePane
-  div.sliderToggle#pictureSlider
-  div.sliderToggle#musicSlider
+	div.sliderPane#musicPane
+	div.sliderPane#picturePane
+	div.sliderToggle#pictureSlider
+	div.sliderToggle#musicSlider
 
-  div#mainPlayer
-    img.playerAlbum(src="/resources/images/chance.jpg")
+	div#mainPlayer
+		img.playerAlbum(src="/resources/images/chance.jpg")
+		table#musicPlayingTimeGrid
+			tr
+				td#startTime
+				td#track
+					div#progressed
+					div#remaining
+				td#endTime
 
-  div#queueContainer
-    div.songContainer
-      div.queueNumber 1
-      img.queueAlbum(src="/resources/images/chance.jpg")
-      p.upVotes 10
-      img.thumbUp(src="/resources/images/thumbUp.svg")
-      p.songTitle Disclosure - Latch
-      p.downVotes 0
-      img.thumbDown(src="/resources/images/thumbDown.svg")
+	div#queueContainer
+		div.songContainer
+			div.queueNumber 1
+			img.queueAlbum(src="/resources/images/chance.jpg")
+			p.upVotes 10
+			img.thumbUp(src="/resources/images/thumbUp.svg")
+			p.songTitle Disclosure - Latch
+			p.downVotes 0
+			img.thumbDown(src="/resources/images/thumbDown.svg")
