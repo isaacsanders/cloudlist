@@ -14,15 +14,25 @@
   background-color: #5a5e6a;
   width: 90%;
   max-width: 1000px;
+  min-width: 100px;
   height: 150px;
   margin: 50px;
   margin-left: auto;
   margin-right: auto;
   border-style: solid;
   border-bottom: 3px solid #383b42;
+  display: block;
+  position: relative;
+  padding: 0.5px;
+  overflow: hidden;
+}
+.rightPlayer {
+  margin-left: 150px;
 }
 .playerAlbum {
   height: 150px;
+  position: absolute;
+  left: 0px;
   display: inline;
   float: left;
 }
@@ -30,13 +40,18 @@
 .songContainer {
   background-color: #5a5e6a;
   width: 80%;
-  max-width: 800px;
+  min-width: 345px;
   height: 50px;
   margin: 30px;
   margin-left: auto;
   margin-right: auto;
   border-style: solid;
   border-bottom: 3px solid #383b42;
+  white-space: nowrap;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  position: relative;
 }
 .queueNumber {
   background-color: #383b42;
@@ -68,8 +83,7 @@
 .songTitle {
   font-size: 20px;
   margin: 15px 16.666666666666668px;
-  overflow: hidden;
-  display: inline;
+  display: inline-block;
   float: left;
 }
 .thumbDown {
@@ -91,7 +105,37 @@
   font-size: 25px;
   margin: 12.5px 16.666666666666668px 12.5px 8.333333333333334px;
 }
-input {
+.twitter-typeahead {
   position: absolute;
-  width: 800px;
+  width: 80%;
+  text-align: center;
+}
+.newSong {
+  position: absolute;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  left: inherit;
+}
+.rightPlayer > p {
+  color: #e5e8ef;
+  margin: 20px;
+}
+.tt-dropdown-menu {
+  margin-left: auto;
+  margin-right: auto;
+}
+.tt-dropdown-menu > .songContainer {
+  margin-right: none;
+  margin-left: none;
+}
+.addSong {
+  height: 100%;
+}
+.songTitleDiv {
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  width: 70%;
+  white-space: nowrap;
+  overflow: hidden;
 }

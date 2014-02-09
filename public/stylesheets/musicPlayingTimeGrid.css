@@ -1,47 +1,47 @@
-
+/*
+ * Import nib
+ */
 #musicPlayingTimeGrid {
-    width: 65%;
-    height: 3em;
-	margin: auto;
-    background: black;
-    color: white;
-    font-weight: bold;
-    text-align: center;
-    vertical-align: middle;
-	position: relative;
-	top: 3.5em;
+  width: 80%;
+  height: 3em;
+  margin: auto;
+  margin-top: 0;
+  background: #2d2f35;
+  color: #e5e8ef;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  bottom: -40%;
 }
-
 #track {
-    width: 82%;
-    background: #312c2c;
-	text-align: center;
+  width: 82%;
+  background: #383b42;
+  text-align: center;
 }
-
-
-#startTime, #endTime {
-    width: 9%;
-    padding: 0.7em;
-	text-align: center;
-	font-family: sans-serif;
-	font-weight: bold;
+#startTime,
+#endTime {
+  width: 9%;
+  padding: 0.7em;
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: bold;
 }
-
-#progressed, #remaining {
-    height: 0.4em;
-    display: inline-block;
-    white-space: nowrap;
-}
-
-#progressed {
-    width: 45%;
-    background-color: #bababa;
-    border-radius: 50% 0 0 50%;
-	margin-right: 0.3em;
-}
-
+#progressed,
 #remaining {
-    width: 45%;
-    background-color: #de6143;
-    border-radius: 0 50% 50% 0;
+  height: 0.4em;
+  display: inline-block;
+  white-space: nowrap;
+}
+#progressed {
+  width: 45%;
+  background-color: #bababa;
+  -webkit-border-radius: 50% 0 0 50%;
+  border-radius: 50% 0 0 50%;
+  margin-right: 0.3em;
+}
+#remaining {
+  width: 45%;
+  background-color: #de6143;
+  -webkit-border-radius: 0 50% 50% 0;
+  border-radius: 0 50% 50% 0;
 }

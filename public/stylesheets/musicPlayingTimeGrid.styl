@@ -1,0 +1,59 @@
+/*
+ * Import nib
+ */
+@import 'nib'
+
+light-back-color = #818590
+mid-back-color = #5a5e6a
+dark-back-color = #383b42
+main-red = #de6143
+main-white = #e5e8ef
+
+#musicPlayingTimeGrid {
+    width: 80%;
+    height: 3em;
+	margin: auto;
+    margin-top: 0;
+    background: darken(dark-back-color,20%);
+    color: main-white;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+	// position: relative;
+	bottom: -40%;
+}
+
+
+#track {
+    width: 82%;
+    background: dark-back-color;
+	text-align: center;
+}
+
+
+#startTime, #endTime {
+    width: 9%;
+    padding: 0.7em;
+	text-align: center;
+	font-family: sans-serif;
+	font-weight: bold;
+}
+
+#progressed, #remaining {
+    height: 0.4em;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+#progressed {
+    width: 45%;
+    background-color: #bababa;
+    border-radius: 50% 0 0 50%;
+	margin-right: 0.3em;
+}
+
+#remaining {
+    width: 45%;
+    background-color: #de6143;
+    border-radius: 0 50% 50% 0;
+}

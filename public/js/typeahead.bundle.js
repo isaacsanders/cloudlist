@@ -651,8 +651,6 @@
         },
         hint: {
             position: "absolute",
-            top: "0",
-            left: "0",
             borderColor: "transparent",
             boxShadow: "none"
         },
@@ -666,9 +664,7 @@
             verticalAlign: "top"
         },
         dropdown: {
-            position: "absolute",
             top: "100%",
-            left: "0",
             zIndex: "100",
             display: "none"
         },
@@ -683,7 +679,6 @@
             whiteSpace: "normal"
         },
         ltr: {
-            left: "0",
             right: "auto"
         },
         rtl: {

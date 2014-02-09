@@ -17,26 +17,29 @@ block pageScripts
       div.queueNumber
         button.addSong(data-track-id="{{trackId}}") +
       img.queueAlbum(src="{{albumArtworkUrl}}")
-      p.songTitle {{title}} - {{artist}}
+      div.songTitleDiv
+        p.songTitle {{title}} - {{artist}}
   script.songTemplate(type="text/x-handlebars")
     li.songContainer
       img.queueAlbum(src="{{albumArtworkUrl}}")
       p.upVotes {{upvoteCount}}
       img.thumbUp(src="/resources/images/thumbUp.svg")
-      p.songTitle {{title}} - {{artist}}
+      div.songTitleDiv
+        p.songTitle {{title}} - {{artist}}
       p.downVotes {{downvoteCount}}
       img.thumbDown(src="/resources/images/thumbDown.svg")
       img.deleteButton(src="/resources/images/deleteButton.svg")
   script.playerTemplate(type="text/x-handlebars")
     img.playerAlbum(src="{{albumArtworkUrl}}")
-    p {{title}} - {{artist}}
-    table#musicPlayingTimeGrid
-      tr
-        td#startTime
-        td#track
-          div#progressed
-          div#remaining
-        td#endTime
+    div.rightPlayer
+      p {{title}} - {{artist}}
+      table#musicPlayingTimeGrid
+        tr
+          td#startTime
+          td#track
+            div#progressed
+            div#remaining
+          td#endTime
 
 
 block content
@@ -47,15 +50,19 @@ block content
 
   div#mainPlayer
     img.playerAlbum(src="/resources/images/missing.png")
-    table#musicPlayingTimeGrid
-      tr
-        td#startTime
-        td#track
-          div#progressed
-          div#remaining
-        td#endTime
+    div.rightPlayer
+      p no songs in queue
+      table#musicPlayingTimeGrid
+        tr
+          td#startTime
+          td#track
+            div#progressed
+            div#remaining
+          td#endTime
 
   ol#queueContainer
 
   div#requestContainer
+    p Search for songs:
+    br
     input.newSong(type="text")
