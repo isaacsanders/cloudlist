@@ -9,30 +9,23 @@
 .centerContainer {
   text-align: center;
 }
-.infoLabel {
-  position: absolute;
-  right: 60%;
-  margin: 10px;
-}
-.infoForm {
-  width: 20%;
-}
 /** main content container **/
 contentCollapser {
   width: 70%;
   height: 50px;
   text-align: center;
+  position: relative;
 }
 /** content header **/
 h2 {
   color: #7b2916;
   background: #de6143;
   font-size: 35px;
-  margin: 7.5px;
   margin-left: auto;
   margin-right: auto;
   cursor: pointer;
   width: 60%;
+  min-width: 385px;
   border: 0;
 }
 #contentCollapser div h2:hover {
@@ -79,3 +72,25 @@ h2 {
 /* IE6,IE7 */
 }
 /** css for when a tab is open **/
+.collContent {
+  padding-left: 0;
+  padding-right: 0;
+  background-color: #737783;
+  width: 60%;
+  min-width: 385px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+.unitGuy {
+  margin: 20px;
+}
+.infoLabel {
+  position: absolute;
+  right: 70%;
+  margin: 10px;
+}
+.infoForm {
+  width: 40%;
+  margin: 5px;
+}

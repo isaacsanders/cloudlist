@@ -21,30 +21,23 @@ collapse-height = 50px
 .centerContainer
     text-align center
 
-.infoLabel
-    position absolute
-    right 60%
-    margin 10px
-
-.infoForm
-    width 20%
-
 /** main content container **/
 contentCollapser
     width 70%
     height collapse-height
     text-align center
+    position relative
 
 /** content header **/
 h2
     color darken(main-red, 50%)
     background main-red
     font-size (collapse-height * 0.7)
-    margin (collapse-height * 0.15)
     margin-left auto
     margin-right auto
     cursor pointer
     width 60%
+    min-width 385px
     border 0
 
 #contentCollapser div h2:hover {
@@ -101,3 +94,26 @@ h2
 /** css for when a tab is open **/
 img.isOpen {
 }
+
+.collContent
+    // padding 20px
+    padding-left 0
+    padding-right 0
+    background-color darken(light-back-color, 10%)
+    width 60%
+    min-width 385px
+    margin-left auto
+    margin-right auto
+    position relative
+
+.unitGuy
+    margin 20px
+
+.infoLabel
+    position absolute
+    right 70%
+    margin 10px
+
+.infoForm
+    width 40%
+    margin 5px
