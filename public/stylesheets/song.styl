@@ -27,15 +27,25 @@ player-height = 150px
     background-color mid-back-color
     width 90%
     max-width 1000px
+    min-width 100px
     height player-height
     margin 50px
     margin-left:auto;
     margin-right:auto;
     border-style:solid;
     border-bottom:3px solid dark-back-color;
+    display block
+    position relative
+    padding 0.5px
+    overflow hidden
+
+.rightPlayer
+    margin-left player-height
 
 .playerAlbum
     height player-height
+    position absolute
+    left 0px;
     display inline
     float left
 
@@ -44,13 +54,17 @@ player-height = 150px
 .songContainer
     background-color mid-back-color
     width 80%
-    max-width 800px
+    min-width 345px;
     height song-height
     margin 30px
     margin-left:auto;
     margin-right:auto;
     border-style:solid;
     border-bottom:3px solid dark-back-color;
+    white-space nowrap
+    overflow hidden
+    text-overflow ellipsis
+    position relative
 
 .queueNumber
     background-color dark-back-color
@@ -82,8 +96,7 @@ player-height = 150px
 .songTitle
     font-size (song-height * 0.4)
     margin (song-height*0.3) (song-height/3)
-    overflow hidden
-    display inline
+    display inline-block
     float left
 
 .thumbDown
@@ -105,6 +118,36 @@ player-height = 150px
     font-size (song-height * 0.5)
     margin (song-height*0.25) (song-height/3) (song-height*0.25) (song-height/6)
 
-input
+.twitter-typeahead
     position absolute
-    width 800px
+    width 80%
+    text-align center
+
+.newSong
+    position absolute
+    width 80%
+    margin-left auto
+    margin-right auto
+    left inherit
+
+// mainPlayer Style
+.rightPlayer > p
+    color main-white
+    margin 20px
+
+.tt-dropdown-menu
+    margin-left auto
+    margin-right auto
+
+.tt-dropdown-menu > .songContainer
+    margin-right none
+    margin-left none
+
+.addSong
+    height 100%
+
+.songTitleDiv
+    text-overflow: ellipsis;
+    width: 70%;
+    white-space: nowrap;
+    overflow: hidden;

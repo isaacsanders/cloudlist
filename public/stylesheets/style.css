@@ -205,6 +205,7 @@ a {
   background-color: #ef634c;
   -webkit-box-shadow: 0px 3px 0px 0px #ce503a;
   box-shadow: 0px 3px 0px 0px #ce503a;
+  padding: 5px;
 }
 .flat-button-1:hover {
   background-color: #eb5137;
@@ -233,7 +234,7 @@ a {
 }
 .bottom {
   bottom: 0px;
-  position: absolute;
+  position: fixed;
   width: 100%;
   padding-bottom: 15px;
   padding-top: 15px;
