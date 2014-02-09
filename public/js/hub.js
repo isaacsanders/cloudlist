@@ -45,9 +45,11 @@
     var socket = io.connect('http://localhost:5000');
 
     socket.on('hub:playlist', function(songlist){
+	    console.log(songlist);
       if (!window.song) {
         if (songlist.length > 0) {
-          window.song = songlist.shift();
+         var singleSong = songlist.shift();
+	      window.song = singleSong.song;
           socket.emit('hub:playlist:dequeue', null);
           var duration;
           SC.get("/tracks/"+window.song.trackId, function(sound) {
@@ -84,8 +86,12 @@
           });
         }
       }
+	  var musicList= [];
+	    for(var i =0; i< songlist.length;i++){
+		    musicList.push(songlist[i].song);
+	    }
 
-      var playlistHtml = $.map(songlist, function(track) {
+      var playlistHtml = $.map(musicList, function(track) {
         return songTemplate(track);
       }).join('');
       $('#queueContainer').html(playlistHtml);
@@ -102,6 +108,7 @@
           upvoteCount: 0,
           downvoteCount: 0
         };
+
         socket.emit('hub:playlist:enqueue', song);
       });
     });

@@ -6,13 +6,14 @@
  * To change this template use File | Settings | File Templates.
  */
 
+var priorityCal = require('./priorityCalculator');
+var prioritySort = require('./prioritySort');
 var songlist = [];
 
 exports.hubIO = function(socket, io){
 	socket.on('hub:poll',function(data) {
 		socket.emit('hub:playlist', songlist);
 	});
-
 };
 
 exports.clientIO = function(socket, io){
@@ -20,7 +21,17 @@ exports.clientIO = function(socket, io){
     socket.emit('client:playlist', songlist);
   });
 	socket.on('hub:playlist:enqueue', function(song) {
-		songlist.push(song);
+		var singleSong = {};
+		singleSong.song = song;
+		singleSong.criteria = {};
+		singleSong.criteria.upvote = 0;
+		singleSong.criteria.downvote = 0;
+		singleSong.criteria.adminupvote = 0;
+		singleSong.criteria.starvation = 0;
+
+		console.log(singleSong);
+		songlist.push(singleSong);
+		songlist = prioritySort(songlist);
     socket.emit('hub:playlist', songlist);
 		io.sockets.emit('client:playlist', songlist);
 	});

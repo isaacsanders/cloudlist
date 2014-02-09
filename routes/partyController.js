@@ -2,7 +2,7 @@ var geocoder = require('geocoder');
 var Party = require('../models/Party');
 
 var ph = ph || {};
-ph.party_control = ph.party_control || {}
+ph.party_control = ph.party_control || {};
 
 
 exports.get_party = function (req, res) {
@@ -46,7 +46,6 @@ exports.post_make_party = function (req, res) {
 
 exports.post_join_party = function(req, res){
 	console.log("current location" + JSON.stringify(req.body));
-
 	Party.get_party_with_location({latitude:req.body.latitude,longitude:req.body.longitude},function(party){
 		res.send({party:party});
 	});

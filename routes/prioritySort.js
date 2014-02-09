@@ -1,4 +1,4 @@
-var calculatePrior = require('priorityCalculator');
+var calculatePrior = require('./priorityCalculator');
 
 module.exports = function(list){
 	for(var i = 0; i < list.lenth; i++){

@@ -5,7 +5,12 @@
     suggestionTemplate = Handlebars.compile($(".suggestionTemplate").text());
 
     socket.on('client:playlist', function(data){
-      var playlistHtml = $.map(data, function(track) {
+		var musicList = [];
+	    for(var i = 0; i<data.length;i++){
+		    musicList.push(data[i].song);
+	    }
+
+      var playlistHtml = $.map(musicList, function(track) {
         return songTemplate(track);
       }).join('');
       $('#queueContainer').html(playlistHtml);
