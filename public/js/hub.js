@@ -81,7 +81,7 @@
             window.isPlaying = true;
             playSong = function playSong() {
               $('.playButton').toggleClass('pauseButton playButton');
-              window.updatePlayerState(sound.position, duration, true);
+              window.updatePlayerState(window.songTime.position, duration, true);
               if (sound.paused) {
                 sound.resume();
               } else {
@@ -91,7 +91,7 @@
             },
             pauseSong = function pauseSong() {
               $('.pauseButton').toggleClass('playButton pauseButton');
-              window.updatePlayerState(sound.position, duration, false);
+              window.updatePlayerState(window.songTime.position, duration, false);
               sound.pause();
               window.isPlaying = false;
             };
