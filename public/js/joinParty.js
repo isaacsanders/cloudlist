@@ -33,7 +33,7 @@ function successfullyFoundLocation(data) {
 		$("h1").text("Is This Your Party?");
 		$("h2").html("OR</br>Ask the host for the ID");
 
-		$('#foundParty').append('<ul><li>'+data.party.name+'</li>');
+		$('#foundParty').append('<ul><li id = "partyName">'+data.party.name+'</li>');
 		$('#foundParty').append('<li>'+data.party.streetAddr+'</li></ul>');
 		$("#foundParty").fadeIn(1000);
 	}
