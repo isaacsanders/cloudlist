@@ -29,7 +29,7 @@ exports.post_make_party = function (req, res) {
 		startDate:startDate,
 		startTime: startTime,
 		endTime: endTime,
-		location:location,
+		location:{"latitude": location.lat, "longitude": location.lng},
 		streetAddr:streetAddr
 	};
 	console.log(partyInfo);
@@ -44,6 +44,10 @@ exports.post_make_party = function (req, res) {
 	});
 };
 
-ph.party_control.get_location = function (location) {
+exports.post_join_party = function(req, res){
+	console.log("current location" + JSON.stringify(req.body));
 
+	Party.get_party_with_location({latitude:req.body.latitude,longitude:req.body.longitude},function(party){
+		res.send({party:party});
+	});
 };

@@ -10,16 +10,19 @@ html
     script(src='/js/jquery_2.1.0.js')
     script(src='/js/jquery_ui_1.10.4.min.js')
     script(src="/js/constants.js")
+    script(src="/js/main.js")
     block pageScripts
   body
+    div#popupCover
+    div#popup
     div.navbar
       a#brand(href="/")
         p#brand-party Party
         p Hub
       div.nav-user
-        a(href="/login") login
+        span#login login
         div.divider
-        a#signup(href="/signup") signup
+        span#signup signup
     block content
     div.bottom
       a(href="http://soundcloud.com")
