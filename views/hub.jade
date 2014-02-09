@@ -29,29 +29,16 @@ block pageScripts
       p.downVotes {{downvoteCount}}
       img.thumbDown(src="/resources/images/thumbDown.svg")
       img.deleteButton(src="/resources/images/deleteButton.svg")
-  script.playerTemplate(type="text/x-handlebars")
-    img.playerAlbum(src="{{albumArtworkUrl}}")
-    div.rightPlayer
-      p {{title}} - {{artist}}
-      table#musicPlayingTimeGrid
-        tr
-          td#startTime
-          td#track
-            div#progressed
-            div#remaining
-          td#endTime
-
 
 block content
   .admin
-    img.adminBtn#playButton(src="/resources/images/playButton.svg")
-    img.adminBtn#pauseButton(style="display: none;" src="/resources/images/pauseButton.svg")
-    img.adminBtn#skipButton(src="/resources/images/skipButton.svg")
+    img.adminBtn.pauseButton
+    img.adminBtn.skipButton(src="/resources/images/skipButton.svg")
 
   div#mainPlayer
     img.playerAlbum(src="/resources/images/missing.png")
     div.rightPlayer
-      p no songs in queue
+      p.songInfo no songs in queue
       table#musicPlayingTimeGrid
         tr
           td#startTime

@@ -6,7 +6,6 @@
   });
   $(document).ready(function(){
     var songTemplate = Handlebars.compile($(".songTemplate").text()),
-    playerTemplate = Handlebars.compile($(".playerTemplate").text()),
     suggestionTemplate = Handlebars.compile($(".suggestionTemplate").text()),
     engine = new Bloodhound({
       datumTokenizer: function(datum) { return Bloodhound.tokenizers.whitespace(datum); },
@@ -45,51 +44,99 @@
     var socket = io.connect('http://localhost:5000');
 
     socket.on('hub:playlist', function(songlist){
-	    console.log(songlist);
+      var duration;
       if (!window.song) {
         if (songlist.length > 0) {
          var singleSong = songlist.shift();
-	      window.song = singleSong.song;
+         window.song = singleSong.song;
           socket.emit('hub:playlist:dequeue', null);
-          var duration;
           SC.get("/tracks/"+window.song.trackId, function(sound) {
             duration = Math.floor(sound.duration / 1000);
           });
-          $('#mainPlayer').html(playerTemplate(window.song));
+          $('#mainPlayer .playerAlbum').attr('src', window.song.albumArtworkUrl);
+          $('#mainPlayer .songInfo').text(window.song.title+" - "+window.song.artist);
           window.updatePlayerState(0, duration, true);
         } else {
           // Currently, do nothing if there are no songs
         }
       } else {
-        if (window.progress > 0) {
-        } else {
-          $('.admin').on('click', '#playButton', function(){
-            $('#playButton').toggle();
-            $('#pauseButton').toggle();
-            SC.stream("/tracks/"+window.song.trackId, function(sound) {
-              console.log(sound);
-              sound.play();
-              socket.emit('hub:nowPlaying', window.song);
-              $('.admin').on('click', '#playButton', function() {
-                $('#playButton').toggle();
-                window.updatePlayerState(window.songTime.progress, duration, true);
-                $('#pauseButton').toggle();
+        if (!window.isPlaying) {
+          SC.get("/tracks/"+window.song.trackId, function(sound) {
+            duration = Math.floor(sound.duration / 1000);
+          });
+          var playSong, pauseSong;
+          SC.stream("/tracks/"+window.song.trackId, {
+            autoPlay: true,
+            onfinish: function() {
+              $('.playButton').toggleClass('playButton pauseButton');
+              window.song = null;
+              window.isPlaying = false;
+              $('#mainPlayer .playerAlbum').attr('src', '/resources/images/missing.png');
+              $('#mainPlayer .songInfo').text('no songs in queue');
+              $('.admin').unbind('click', pauseSong);
+              $('.admin').unbind('click', playSong);
+              socket.emit('hub:poll');
+            }
+          }, function(sound) {
+            window.isPlaying = true;
+            playSong = function playSong() {
+              $('.playButton').toggleClass('pauseButton playButton');
+              window.updatePlayerState(sound.position, duration, true);
+              if (sound.paused) {
+                sound.resume();
+              } else {
                 sound.play();
-              });
-              $('.admin').on('click', '#pauseButton', function() {
-                $('#pauseButton').toggle();
-                window.updatePlayerState(window.songTime.progress, duration, false);
-                $('#playButton').toggle();
-                sound.pause();
-              });
+              }
+              window.isPlaying = true;
+            },
+            pauseSong = function pauseSong() {
+              $('.pauseButton').toggleClass('playButton pauseButton');
+              window.updatePlayerState(sound.position, duration, false);
+              sound.pause();
+              window.isPlaying = false;
+            };
+            window.updatePlayerState(0, duration, true);
+            socket.emit('hub:nowPlaying', window.song);
+            $('.admin').on('click', '.playButton', playSong);
+            $('.admin').on('click', '.pauseButton', pauseSong);
+            $('.admin').on('click', '.skipButton', function() {
+              $('.playButton').toggleClass('playButton pauseButton');
+              sound.stop();
+              window.song = null;
+              window.isPlaying = false;
+              $('#mainPlayer .playerAlbum').attr('src', '/resources/images/missing.png');
+              $('#mainPlayer .songInfo').text('no songs in queue');
+              $('.admin').unbind('click', pauseSong);
+              $('.admin').unbind('click', playSong);
+              socket.emit('hub:poll');
             });
           });
         }
       }
-	  var musicList= [];
-	    for(var i =0; i< songlist.length;i++){
-		    musicList.push(songlist[i].song);
-	    }
+//       SC.stream("/tracks/"+window.song.trackId, {
+//         autoPlay: window.isPlaying,
+//         onfinish: function() {
+//           if (songlist.length > 0) {
+//             window.song = songlist.shift();
+//             window.isPlaying = true;
+//           } else {
+//             window.isPlaying = false;
+//           }
+//         }
+//       }, function(sound) {
+//         $('.admin').on('click', '#playButton', function() {
+//           if (!window.isPlaying) {
+//             window.updatePlayerState(window.songTime.progress, duration, true);
+//             sound.play();
+//             window.isPlaying = true;
+//           }
+//         });
+//       });
+
+      var musicList= [];
+      for(var i =0; i< songlist.length;i++){
+        musicList.push(songlist[i].song);
+      }
 
       var playlistHtml = $.map(musicList, function(track) {
         return songTemplate(track);
