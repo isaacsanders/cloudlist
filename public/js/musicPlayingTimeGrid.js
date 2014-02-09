@@ -2,6 +2,7 @@
 $(document).ready(initializePlayer);
 
 function initializePlayer() {
+
   // grab elements
   var $musicPlayingTimeGrid = $("#musicPlayingTimeGrid"),
   $startTime = $("#startTime"),
@@ -14,6 +15,9 @@ function initializePlayer() {
 
   // update player state
   window.updatePlayerState = (function(progressed, overallLength, isPlaying) {
+  
+	// kill any previous timer
+	window.clearInterval(window.songPlayerInterval);
 
     if (progressed >= 0 && overallLength >= 0) {
       window.songTime = {progress: progressed, overall: overallLength};
