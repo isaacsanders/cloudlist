@@ -26,7 +26,11 @@ exports.clientIO = function(socket, io){
 	});
 	socket.on('hub:playlist:dequeue', function() {
 		songlist.shift();
+    console.log(songlist);
     socket.emit('hub:playlist', songlist);
 		io.sockets.emit('client:playlist', songlist);
 	});
+  socket.on('hub:nowPlaying', function(song) {
+    io.sockets.emit('client:nowPlaying', song);
+  });
 };
