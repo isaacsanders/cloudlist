@@ -14,12 +14,6 @@ function initializePlayer() {
 
   // update player state
   window.updatePlayerState = (function(progressed, overallLength, isPlaying) {
-    $musicPlayingTimeGrid = $("#musicPlayingTimeGrid"),
-    $startTime = $("#startTime"),
-    $endTime = $("#endTime"),
-    $progressed = $("#progressed"),
-    $remaining = $("#remaining"),
-    $track = $("#track");
 
     if (progressed >= 0 && overallLength >= 0) {
       window.songTime = {progress: progressed, overall: overallLength};
