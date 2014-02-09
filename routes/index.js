@@ -14,6 +14,7 @@ exports.route = function (app) {
 	app.get('/party', ph.route.get_party);
 	app.get('/addSongTest', ph.route.get_song_test);
 	app.get('/joinParty', ph.route.get_join_party);
+	app.post('/joinParty',ph.route.post_join_party);
 	app.get('/contentCollapser', ph.route.get_content_collapser);
 	app.get('/makeParty', ph.route.get_make_party);
 	app.post('/makeParty', ph.route.post_make_party);
@@ -60,4 +61,8 @@ ph.route.get_join_party = function(req, res) {
 
 ph.route.post_make_party = function(req, res){
 	return ph.file_import.party_control.post_make_party(req, res);
+}
+
+ph.route.post_join_party = function(req, res){
+	return ph.file_import.party_control.post_join_party(req, res);
 }
