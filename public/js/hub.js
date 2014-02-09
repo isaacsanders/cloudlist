@@ -41,7 +41,7 @@
       templates: templates
     });
 
-    var socket = io.connect('http://localhost:5000');
+    var socket = io.connect('http://trackwav.com');
 
     socket.on('hub:playlist', function(songlist){
       var duration;
@@ -73,8 +73,8 @@
               window.isPlaying = false;
               $('#mainPlayer .playerAlbum').attr('src', '/resources/images/missing.png');
               $('#mainPlayer .songInfo').text('no songs in queue');
-              $('.admin').unbind('click', pauseSong);
-              $('.admin').unbind('click', playSong);
+              $('.admin').unbind('touchstart click', pauseSong);
+              $('.admin').unbind('touchstart click', playSong);
               socket.emit('hub:poll');
             }
           }, function(sound) {
@@ -97,17 +97,17 @@
             };
             window.updatePlayerState(0, duration, true);
             socket.emit('hub:nowPlaying', window.song);
-            $('.admin').on('click', '.playButton', playSong);
-            $('.admin').on('click', '.pauseButton', pauseSong);
-            $('.admin').on('click', '.skipButton', function() {
+            $('.admin').on('touchstart click', '.playButton', playSong);
+            $('.admin').on('touchstart click', '.pauseButton', pauseSong);
+            $('.admin').on('touchstart click', '.skipButton', function() {
               $('.playButton').toggleClass('playButton pauseButton');
               sound.stop();
               window.song = null;
               window.isPlaying = false;
               $('#mainPlayer .playerAlbum').attr('src', '/resources/images/missing.png');
               $('#mainPlayer .songInfo').text('no songs in queue');
-              $('.admin').unbind('click', pauseSong);
-              $('.admin').unbind('click', playSong);
+              $('.admin').unbind('touchstart click', pauseSong);
+              $('.admin').unbind('touchstart click', playSong);
               socket.emit('hub:poll');
             });
           });
@@ -144,7 +144,7 @@
       $('#queueContainer').html(playlistHtml);
     });
 
-    $(document).on('click', 'button.addSong', function(data){
+    $(document).on('touchstart click', 'button.addSong', function(data){
       var trackId = $(data.target).data('track-id');
       SC.get('/tracks/'+trackId.toString(), null, function(track) {
         var song = {
@@ -161,5 +161,8 @@
     });
 
     socket.emit('hub:poll', { partyId: null });
+    if (window.song) {
+      socket.emit('hub:nowPlaying', { song: window.song });
+    }
   });
 })(jQuery);

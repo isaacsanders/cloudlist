@@ -28,7 +28,7 @@ exports.clientIO = function(socket, io){
 		singleSong.criteria.downvote = 0;
 		singleSong.criteria.adminupvote = 0;
 		singleSong.criteria.starvation = 0;
-		singleSong.criteria.timeStack = 0
+		singleSong.criteria.timeStack = 0;
 		console.log(singleSong);
 		for(var i = 0; i < songlist.length; i++){
 			songlist[i].criteria.timeStack++;
