@@ -3,10 +3,14 @@
 	padding: 7%;
 }
 
+#foundParty, h1, h2, h2 p, input {
+	display: none;
+}
+
+
 #foundParty {
 	margin: 0 auto;
 	list-style: none;
-	display: none;
 }
 
 #foundParty li {
