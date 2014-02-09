@@ -213,6 +213,10 @@ a {
 .flat-button-1:active {
   -webkit-box-shadow: 0px 1px 0px 0px #ce503a;
   box-shadow: 0px 1px 0px 0px #ce503a;
+  position: relative;
+  top: -5px;
+  line-height: 50px;
+  padding-top: 5px;
 }
 #partyID {
   height: 60px;
@@ -236,6 +240,30 @@ a {
 .flat-button-2:active {
   -webkit-box-shadow: 0px 1px 0px 0px #393c43;
   box-shadow: 0px 1px 0px 0px #393c43;
+  line-height: 50px;
+  top: 4px;
+  margin-bottom: 10px;
+}
+.flat-button-3 {
+  height: 70px;
+  width: 15%;
+  margin: 10px;
+  min-width: 125px;
+  background-color: #ef634c;
+  -webkit-box-shadow: 0px 3px 0px 0px #ce503a;
+  box-shadow: 0px 3px 0px 0px #ce503a;
+  padding: 5px;
+}
+.flat-button-3:hover {
+  background-color: #eb5137;
+}
+.flat-button-3:active {
+  -webkit-box-shadow: 0px 1px 0px 0px #ce503a;
+  box-shadow: 0px 1px 0px 0px #ce503a;
+  position: relative;
+  line-height: 50px;
+  top: 2px;
+  padding-top: 5px;
 }
 .adminBtn {
   height: 70px;
@@ -280,4 +308,7 @@ img.playButton {
 .landingTagline > p {
   display: inline;
   font-size: 48px;
+}
+#foundParty {
+  padding: 20px;
 }
