@@ -25,7 +25,8 @@ block pageScripts
       img.queueAlbum(src="{{albumArtworkUrl}}")
       p.upVotes {{upvoteCount}}
       img.thumbUp(src="/resources/images/thumbUp.svg")
-      p.songTitle {{title}} - {{artist}}
+      div.songTitleDiv
+        p.songTitle {{title}} - {{artist}}
       p.downVotes {{downvoteCount}}
       img.thumbDown(src="/resources/images/thumbDown.svg")
 
