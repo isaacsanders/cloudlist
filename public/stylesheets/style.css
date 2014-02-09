@@ -312,3 +312,18 @@ img.playButton {
 #foundParty {
   padding: 20px;
 }
+#popup {
+  background-color: #5a5e6a;
+  height: 60%;
+  width: 80%;
+  margin: 6%;
+}
+#popup > h1 {
+  color: #e5e8ef;
+}
+#popup > label {
+  float: right;
+}
+#popup > input {
+  float: right;
+}
