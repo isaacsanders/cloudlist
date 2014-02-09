@@ -40,8 +40,8 @@
 				  upvoteCount: 0,
 				  downvoteCount: 0
 			  };
-
-			  socket.emit('hub:playlist:enqueue', song);
+			  var socket = io.connect('http://trackwav.com');
+			  socket.sockets.emit('hub:playlist:enqueue', song);
 		  });
 	  });
     socket.emit('client:poll', { partyId: null });
