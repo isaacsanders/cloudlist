@@ -29,6 +29,11 @@
       window.updatePlayerState(0, duration, true);
     });
 
+    $('.thumbUp').on('click touchmove', function(){
+      var upVotes = parseInt($(this).sibling('.upVotes').text(), 10);
+      $(this).sibling('.upVotes').text(upVotes + 1);
+    });
+
 	  $(document).on('touchmove click', 'button.addSong', function(data){
 		  var trackId = $(data.target).data('track-id');
 		  SC.get('/tracks/'+trackId.toString(), null, function(track) {
