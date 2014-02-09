@@ -73,8 +73,8 @@
               window.isPlaying = false;
               $('#mainPlayer .playerAlbum').attr('src', '/resources/images/missing.png');
               $('#mainPlayer .songInfo').text('no songs in queue');
-              $('.admin').unbind('touchstart click', pauseSong);
-              $('.admin').unbind('touchstart click', playSong);
+              $('.admin').unbind('touchmove click', pauseSong);
+              $('.admin').unbind('touchmove click', playSong);
               socket.emit('hub:poll');
             }
           }, function(sound) {
@@ -97,17 +97,17 @@
             };
             window.updatePlayerState(0, duration, true);
             socket.emit('hub:nowPlaying', window.song);
-            $('.admin').on('touchstart click', '.playButton', playSong);
-            $('.admin').on('touchstart click', '.pauseButton', pauseSong);
-            $('.admin').on('touchstart click', '.skipButton', function() {
+            $('.admin').on('touchmove click', '.playButton', playSong);
+            $('.admin').on('touchmove click', '.pauseButton', pauseSong);
+            $('.admin').on('touchmove click', '.skipButton', function() {
               $('.playButton').toggleClass('playButton pauseButton');
               sound.stop();
               window.song = null;
               window.isPlaying = false;
               $('#mainPlayer .playerAlbum').attr('src', '/resources/images/missing.png');
               $('#mainPlayer .songInfo').text('no songs in queue');
-              $('.admin').unbind('touchstart click', pauseSong);
-              $('.admin').unbind('touchstart click', playSong);
+              $('.admin').unbind('touchmove click', pauseSong);
+              $('.admin').unbind('touchmove click', playSong);
               socket.emit('hub:poll');
             });
           });

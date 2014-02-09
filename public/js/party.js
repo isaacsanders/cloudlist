@@ -29,7 +29,7 @@
       window.updatePlayerState(0, duration, true);
     });
 
-	  $(document).on('touchstart click', 'button.addSong', function(data){
+	  $(document).on('touchmove click', 'button.addSong', function(data){
 		  var trackId = $(data.target).data('track-id');
 		  SC.get('/tracks/'+trackId.toString(), null, function(track) {
 			  var song = {
