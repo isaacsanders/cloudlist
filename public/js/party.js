@@ -29,6 +29,21 @@
       window.updatePlayerState(0, duration, true);
     });
 
+	  $(document).on('touchstart click', 'button.addSong', function(data){
+		  var trackId = $(data.target).data('track-id');
+		  SC.get('/tracks/'+trackId.toString(), null, function(track) {
+			  var song = {
+				  title: track.title,
+				  trackId: track.id,
+				  artist: track.user.username,
+				  albumArtworkUrl: track.artwork_url || "/resources/images/missing.png",
+				  upvoteCount: 0,
+				  downvoteCount: 0
+			  };
+
+			  socket.emit('hub:playlist:enqueue', song);
+		  });
+	  });
     socket.emit('client:poll', { partyId: null });
   });
 })(jQuery);
