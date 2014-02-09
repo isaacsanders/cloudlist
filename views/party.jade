@@ -8,8 +8,11 @@ block styleSheets
 block pageScripts
   script(src="/js/socket.io.js")
   script(src="/js/handlebars.js")
+  script(src="/js/typeahead.bundle.js")
+  script(src="/js/soundcloud.js")
   script(src='/js/sliders.js')
   script(src="/js/party.js")
+  script(src="/js/hub.js")
   script(src="/js/musicPlayingTimeGrid.js")
   script.suggestionTemplate(type="text/x-handlebars")
     div.songContainer
@@ -22,15 +25,19 @@ block pageScripts
       img.queueAlbum(src="{{albumArtworkUrl}}")
       p.upVotes {{upvoteCount}}
       img.thumbUp(src="/resources/images/thumbUp.svg")
-      p.songTitle {{title}} - {{artist}}
+      div.songTitleDiv
+        p.songTitle {{title}} - {{artist}}
       p.downVotes {{downvoteCount}}
       img.thumbDown(src="/resources/images/thumbDown.svg")
 
 block content
   div.sliderPane#musicPane
+    div#requestContainer
+      input.newSong(type = "text")
   div.sliderPane#picturePane
   div.sliderToggle#pictureSlider
   div.sliderToggle#musicSlider
+
 
   div#mainPlayer
     img.playerAlbum(src="/resources/images/chance.jpg")
