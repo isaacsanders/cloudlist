@@ -44,21 +44,19 @@ block pageScripts
 
 block content
   .admin
-    img.adminBtn#playButton(src="/resources/images/playButton.svg")
-    img.adminBtn#pauseButton(style="display: none;" src="/resources/images/pauseButton.svg")
-    img.adminBtn#skipButton(src="/resources/images/skipButton.svg")
+    img.adminBtn.playButton
+    img.adminBtn.skipButton(src="/resources/images/skipButton.svg")
 
   div#mainPlayer
     img.playerAlbum(src="/resources/images/missing.png")
-    div.rightPlayer
-      p no songs in queue
-      table#musicPlayingTimeGrid
-        tr
-          td#startTime
-          td#track
-            div#progressed
-            div#remaining
-          td#endTime
+    p.songInfo no songs in queue
+    table#musicPlayingTimeGrid
+      tr
+        td#startTime
+        td#track
+          div#progressed
+          div#remaining
+        td#endTime
 
   ol#queueContainer
 
