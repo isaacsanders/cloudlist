@@ -9,13 +9,13 @@
 	    for(var i = 0; i<data.length;i++){
 		    musicList.push(data[i].song);
 	    }
-
+		sortQueue(data);
       var playlistHtml = $.map(musicList, function(track) {
         return songTemplate(track);
       }).join('');
       $('#queueContainer').html(playlistHtml);
     });
-
+	
     socket.emit('client:poll', { partyId: null });
   });
 })(jQuery);
