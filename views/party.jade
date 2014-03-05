@@ -22,7 +22,7 @@ block pageScripts
       img.queueAlbum(src="{{albumArtworkUrl}}")
       p.songTitle {{title}} - {{artist}}
   script.songTemplate(type="text/x-handlebars")
-    li.songContainer
+    li.songContainer(id="{{trackId}}")
       img.queueAlbum(src="{{albumArtworkUrl}}")
       p.upVotes {{upvoteCount}}
       img.thumbUp(src="/resources/images/thumbUp.svg")

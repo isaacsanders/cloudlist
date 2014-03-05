@@ -1,7 +1,21 @@
 
-function sortQueue(currentList,trueList) {
-    addAndRemoveAllExrasBasedOnIdLists(currentList,trueList);
-    sortObjectsBasedOnIdListAssumeNoAddsOrDeletes(currentList,trueList);
+function sortQueue(data) {
+    // turn data into ID list
+    window.trueSongList = makeIdListFromMusicObjects(data);
+    console.log("HERE!!", window.trueSongList);
+//    if (!window.currentSongList) {
+//        window.currentSongList = window.trueSongList;
+//    }
+//    addAndRemoveAllExrasBasedOnIdLists(window.currentSongList, window.trueSongList, data);
+//    sortObjectsBasedOnIdListAssumeNoAddsOrDeletes(window.currentSongList, window.trueSongList);
+}
+
+function makeIdListFromMusicObjects(data) {
+    var i, list = [];
+    for (i = 0; i < data.length; i++) {
+        list.push(data[i].song.trackId);
+    }
+    return list;
 }
 
 
@@ -14,8 +28,8 @@ function switchAdjacentDivs(id1, id2, callback) {
 
 
     // find out higher element
-   position1 = $div1.position();
-   position2 = $div2.position();
+    position1 = $div1.position();
+    position2 = $div2.position();
     if (position1.top < position2.top) {
         $higher = $div1;
         $lower = $div2;
@@ -89,7 +103,7 @@ function sortObjectsBasedOnIdListAssumeNoAddsOrDeletes(currentList,trueList) {
 }
 
 
-function addAndRemoveAllExrasBasedOnIdLists(currentList,trueList) {
+function addAndRemoveAllExrasBasedOnIdLists(currentList, trueList, data) {
     var i, j, truL, curL, $e, addedList=[];
 
     for (i = 0; i < currentList.length; i++) {
@@ -104,7 +118,7 @@ function addAndRemoveAllExrasBasedOnIdLists(currentList,trueList) {
                 // remove
                 $e = $("#"+curL);
                 $e.animate({opacity: 0, height: 0}, 500, function(){
-                   $(this).remove();
+                    $(this).remove();
                 });
             }
         }

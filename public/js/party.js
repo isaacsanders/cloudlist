@@ -14,6 +14,7 @@
         musicList.push(data[i].song);
       }
 
+      sortQueue(data);
       var playlistHtml = $.map(musicList, function(track) {
         return songTemplate(track);
       }).join('');
@@ -34,21 +35,21 @@
       $(this).sibling('.upVotes').text(upVotes + 1);
     });
 
-	  $(document).on('touchmove click', 'button.addSong', function(data){
-		  var trackId = $(data.target).data('track-id');
-		  SC.get('/tracks/'+trackId.toString(), null, function(track) {
-			  var song = {
-				  title: track.title,
-				  trackId: track.id,
-				  artist: track.user.username,
-				  albumArtworkUrl: track.artwork_url || "/resources/images/missing.png",
-				  upvoteCount: 0,
-				  downvoteCount: 0
-			  };
-			  var socket = io.connect('http://trackwav.com');
-			  socket.sockets.emit('hub:playlist:enqueue', song);
-		  });
-	  });
+    $(document).on('touchmove click', 'button.addSong', function(data){
+      var trackId = $(data.target).data('track-id');
+      SC.get('/tracks/'+trackId.toString(), null, function(track) {
+        var song = {
+          title: track.title,
+          trackId: track.id,
+          artist: track.user.username,
+          albumArtworkUrl: track.artwork_url || "/resources/images/missing.png",
+          upvoteCount: 0,
+          downvoteCount: 0
+        };
+        var socket = io.connect('http://trackwav.com');
+        socket.sockets.emit('hub:playlist:enqueue', song);
+      });
+    });
     socket.emit('client:poll', { partyId: null });
   });
 })(jQuery);
