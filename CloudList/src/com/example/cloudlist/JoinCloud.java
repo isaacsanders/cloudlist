@@ -5,7 +5,6 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
-import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -21,7 +20,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class CloudListMain extends Activity {
+public class JoinCloud extends Activity {
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
@@ -159,8 +158,6 @@ public class CloudListMain extends Activity {
     
     public void joinCloud(View v){
     	//System.out.println("Join Cloud");
-    	Intent intent = new Intent(this, JoinCloud.class);
-    	startActivity(intent);
     }
     /**
      * Fragment that appears in the "content_frame", shows a planet
@@ -176,7 +173,7 @@ public class CloudListMain extends Activity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.main_content, container, false);
+            View rootView = inflater.inflate(R.layout.join_cloud_list, container, false);
             int i = getArguments().getInt(ARG_OPTION_NUMBER);
             String option = getResources().getStringArray(R.array.options_array)[i];
             

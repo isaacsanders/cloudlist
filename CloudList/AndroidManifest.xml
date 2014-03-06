@@ -22,6 +22,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+         <activity
+            android:label="Join Cloud"
+            android:name=".JoinCloud">
+            <intent-filter>
+                <action android:name="com.example.JoinCloud" />
+                <catefory android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
