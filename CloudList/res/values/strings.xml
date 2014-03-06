@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">CloudList</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string-array name="options_array">
+        <item>Home</item>
+        <item>Join Cloud</item>
+        <item>Start Cloud</item>
+        <item>Playlists</item>
+        <item>Settings</item>
+        <item>Log Out</item>
+    </string-array>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+
+</resources>
