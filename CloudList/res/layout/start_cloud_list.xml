@@ -4,19 +4,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#818590" >
-
-    <TextView
-        android:id="@+id/textViewCloud1"
+    
+    <LinearLayout
+        android:id="@+id/layout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginRight="60dp"
-        android:layout_marginTop="25dp"
-        android:text="Cloud"
-        android:textColor="#FFFFFF"
-        android:textSize="50sp" />
+        android:layout_marginTop="38dp"
+        android:layout_centerHorizontal="true" >
 
+        <TextView
+	        android:id="@+id/textViewStart"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="0"
+	        android:text="Start"
+	        android:textColor="#3B3D49"
+	        android:textSize="50sp" />
+        
+	    <TextView
+	        android:id="@+id/textViewCloud1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="0"
+	        android:text="Cloud"
+	        android:textColor="#FFFFFF"
+	        android:textSize="50sp" />
+
+   
+    </LinearLayout>
+    
     <Button
         android:id="@+id/button1"
         android:layout_width="125dp"
@@ -29,15 +45,6 @@
         android:text="Start"
         android:textColor="#FFFFFF" />
 
-    <TextView
-        android:id="@+id/textViewStart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textViewCloud1"
-        android:layout_alignBottom="@+id/textViewCloud1"
-        android:layout_toLeftOf="@+id/textViewCloud1"
-        android:text="Start"
-        android:textColor="#3B3D49"
-        android:textSize="50sp" />
+    
 
 </RelativeLayout>
