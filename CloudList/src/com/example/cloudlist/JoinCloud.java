@@ -163,8 +163,7 @@ public class JoinCloud extends Activity {
      */
     public static class MainContentFragment extends Fragment {
         public static final String ARG_OPTION_NUMBER = "option_number";
-        public static Context context = null;
-        public static boolean firstLoad = true; 
+        public static Context context = null; 
         
         public MainContentFragment() {
             // Empty constructor required for fragment subclasses
@@ -179,16 +178,15 @@ public class JoinCloud extends Activity {
             
             if (option.equals("Home"))
             {
-            	if (firstLoad)
-            	{
-            		firstLoad = false;
-            	}
-            	else
-            	{
-	            	Intent intent = new Intent(context, CloudListMain.class);
-	            	getActivity().finish();
-	            	startActivity(intent);
-            	}
+            	Intent intent = new Intent(context, CloudListMain.class);
+            	getActivity().finish();
+            	startActivity(intent);
+            }
+            else if (option.equals("Start Cloud"))
+            {
+            	Intent intent = new Intent(context, StartCloud.class);
+            	getActivity().finish();
+            	startActivity(intent);
             }
             
 //            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(

@@ -6,7 +6,7 @@
 
     <uses-sdk
         android:minSdkVersion="14"
-        android:targetSdkVersion="17" />
+        android:targetSdkVersion="19" />
 
     <application
         android:allowBackup="true"
@@ -27,7 +27,15 @@
             android:name=".JoinCloud">
             <intent-filter>
                 <action android:name="com.example.JoinCloud" />
-                <catefory android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:label="Start Cloud"
+            android:name=".StartCloud">
+            <intent-filter>
+                <action android:name="com.example.StartCloud" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
     </application>

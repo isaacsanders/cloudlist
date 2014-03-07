@@ -21,7 +21,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class CloudListMain extends Activity {
+public class StartCloud extends Activity {
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
@@ -73,10 +73,10 @@ public class CloudListMain extends Activity {
         mDrawerLayout.setDrawerListener(mDrawerToggle);
 
         if (savedInstanceState == null) {
-            selectItem(0);
+            selectItem(2);
         }
         
-        MainContentFragment.context = CloudListMain.this;
+        MainContentFragment.context = StartCloud.this;
     }
 
     @Override
@@ -154,19 +154,9 @@ public class CloudListMain extends Activity {
         // Pass any configuration change to the drawer toggls
         mDrawerToggle.onConfigurationChanged(newConfig);
     }
-
-    public void startCloud(View v){
-    	//System.out.println("Start Cloud");
-    	Intent intent = new Intent(this, StartCloud.class);
-    	startActivity(intent);
-    	finish();
-    }
     
-    public void joinCloud(View v){
+    public void onStart(View v){
     	//System.out.println("Join Cloud");
-    	Intent intent = new Intent(this, JoinCloud.class);
-    	startActivity(intent);
-    	finish();
     }
     /**
      * Fragment that appears in the "content_frame", shows a planet
@@ -182,22 +172,23 @@ public class CloudListMain extends Activity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.main_content, container, false);
+            View rootView = inflater.inflate(R.layout.start_cloud_list, container, false);
             int i = getArguments().getInt(ARG_OPTION_NUMBER);
             String option = getResources().getStringArray(R.array.options_array)[i];
             
-            if (option.equals("Join Cloud"))
+            if (option.equals("Home"))
+            {
+            	Intent intent = new Intent(context, CloudListMain.class);
+            	getActivity().finish();
+            	startActivity(intent);
+            }
+            else if (option.equals("Join Cloud"))
             {
             	Intent intent = new Intent(context, JoinCloud.class);
-            	startActivity(intent);
-            	getActivity().finish();
-            }
-            else if (option.equals("Start Cloud"))
-            {
-            	Intent intent = new Intent(context, StartCloud.class);
             	getActivity().finish();
             	startActivity(intent);
             }
+            
             
 //            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
 //    				getActivity());
@@ -213,7 +204,7 @@ public class CloudListMain extends Activity {
 //            int imageId = getResources().getIdentifier(planet.toLowerCase(Locale.getDefault()),
 //                            "drawable", getActivity().getPackageName());
 //            ((ImageView) rootView.findViewById(R.id.image)).setImageResource(imageId);
-//            getActivity().setTitle(planet);
+           getActivity().setTitle(option);
             return rootView;
         }
         

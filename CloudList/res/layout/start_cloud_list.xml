@@ -6,7 +6,7 @@
     android:background="#818590" >
 
     <TextView
-        android:id="@+id/textViewCloud"
+        android:id="@+id/textViewCloud1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
@@ -17,17 +17,6 @@
         android:textColor="#FFFFFF"
         android:textSize="50sp" />
 
-    <TextView
-        android:id="@+id/textViewJoin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textViewCloud"
-        android:layout_alignBottom="@+id/textViewCloud"
-        android:layout_toLeftOf="@+id/textViewCloud"
-        android:text="Join"
-        android:textColor="#3B3D49"
-        android:textSize="50sp" />
-
     <Button
         android:id="@+id/button1"
         android:layout_width="125dp"
@@ -36,8 +25,19 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="58dp"
         android:background="#DE6141"
-        android:onClick="submitList"
-        android:text="Submit"
+        android:onClick="onStart"
+        android:text="Start"
         android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/textViewStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textViewCloud1"
+        android:layout_alignBottom="@+id/textViewCloud1"
+        android:layout_toLeftOf="@+id/textViewCloud1"
+        android:text="Start"
+        android:textColor="#3B3D49"
+        android:textSize="50sp" />
 
 </RelativeLayout>
