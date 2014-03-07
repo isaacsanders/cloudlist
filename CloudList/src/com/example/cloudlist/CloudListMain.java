@@ -2,9 +2,9 @@ package com.example.cloudlist;
 
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -75,6 +75,8 @@ public class CloudListMain extends Activity {
         if (savedInstanceState == null) {
             selectItem(0);
         }
+        
+        MainContentFragment.context = CloudListMain.this;
     }
 
     @Override
@@ -161,13 +163,14 @@ public class CloudListMain extends Activity {
     	//System.out.println("Join Cloud");
     	Intent intent = new Intent(this, JoinCloud.class);
     	startActivity(intent);
+    	finish();
     }
     /**
      * Fragment that appears in the "content_frame", shows a planet
      */
     public static class MainContentFragment extends Fragment {
         public static final String ARG_OPTION_NUMBER = "option_number";
-        
+        public static Context context = null;
         
         public MainContentFragment() {
             // Empty constructor required for fragment subclasses
@@ -180,15 +183,23 @@ public class CloudListMain extends Activity {
             int i = getArguments().getInt(ARG_OPTION_NUMBER);
             String option = getResources().getStringArray(R.array.options_array)[i];
             
-            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
-    				getActivity());
-     
-    			// set title
-    		alertDialogBuilder.setTitle("You selected: "+ option);
-    
-  			AlertDialog alertDialog = alertDialogBuilder.create();
-     
-  			alertDialog.show();
+            if (option.equals("Join Cloud"))
+            {
+            	Intent intent = new Intent(context, JoinCloud.class);
+//            	intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            	startActivity(intent);
+            	getActivity().finish();
+            }
+            
+//            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+//    				getActivity());
+//     
+//    			// set title
+//    		alertDialogBuilder.setTitle("You selected: "+ option);
+//    
+//  			AlertDialog alertDialog = alertDialogBuilder.create();
+//     
+//  			alertDialog.show();
 //            
 //
 //            int imageId = getResources().getIdentifier(planet.toLowerCase(Locale.getDefault()),

@@ -2,9 +2,10 @@ package com.example.cloudlist;
 
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -72,8 +73,10 @@ public class JoinCloud extends Activity {
         mDrawerLayout.setDrawerListener(mDrawerToggle);
 
         if (savedInstanceState == null) {
-            selectItem(0);
+            selectItem(1);
         }
+        
+        MainContentFragment.context = JoinCloud.this;
     }
 
     @Override
@@ -151,12 +154,8 @@ public class JoinCloud extends Activity {
         // Pass any configuration change to the drawer toggls
         mDrawerToggle.onConfigurationChanged(newConfig);
     }
-
-    public void startCloud(View v){
-    	//System.out.println("Start Cloud");
-    }
     
-    public void joinCloud(View v){
+    public void submitList(View v){
     	//System.out.println("Join Cloud");
     }
     /**
@@ -164,7 +163,8 @@ public class JoinCloud extends Activity {
      */
     public static class MainContentFragment extends Fragment {
         public static final String ARG_OPTION_NUMBER = "option_number";
-        
+        public static Context context = null;
+        public static boolean firstLoad = true; 
         
         public MainContentFragment() {
             // Empty constructor required for fragment subclasses
@@ -177,21 +177,35 @@ public class JoinCloud extends Activity {
             int i = getArguments().getInt(ARG_OPTION_NUMBER);
             String option = getResources().getStringArray(R.array.options_array)[i];
             
-            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
-    				getActivity());
-     
-    			// set title
-    		alertDialogBuilder.setTitle("You selected: "+ option);
-    
-  			AlertDialog alertDialog = alertDialogBuilder.create();
-     
-  			alertDialog.show();
+            if (option.equals("Home"))
+            {
+            	if (firstLoad)
+            	{
+            		firstLoad = false;
+            	}
+            	else
+            	{
+	            	Intent intent = new Intent(context, CloudListMain.class);
+	            	getActivity().finish();
+	            	startActivity(intent);
+            	}
+            }
+            
+//            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+//    				getActivity());
+//     
+//    			// set title
+//    		alertDialogBuilder.setTitle("You selected: "+ option);
+//    
+//  			AlertDialog alertDialog = alertDialogBuilder.create();
+//     
+//  			alertDialog.show();
 //            
 //
 //            int imageId = getResources().getIdentifier(planet.toLowerCase(Locale.getDefault()),
 //                            "drawable", getActivity().getPackageName());
 //            ((ImageView) rootView.findViewById(R.id.image)).setImageResource(imageId);
-//            getActivity().setTitle(planet);
+           getActivity().setTitle(option);
             return rootView;
         }
         

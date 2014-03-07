@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_marginRight="55dp"
+        android:layout_marginRight="60dp"
         android:layout_marginTop="25dp"
         android:text="Cloud"
         android:textColor="#FFFFFF"
@@ -63,6 +63,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="58dp"
         android:background="#DE6141"
+        android:onClick="submitList"
         android:text="Submit"
         android:textColor="#FFFFFF" />
 
