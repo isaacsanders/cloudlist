@@ -1,13 +1,19 @@
 package com.example.cloudlist;
 
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.media.MediaPlayer;
+import android.media.MediaPlayer.OnCompletionListener;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -20,12 +26,15 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.SeekBar;
+import android.widget.TextView;
+import android.widget.AdapterView.OnItemClickListener;
 
-public class JoinCloud extends Activity {
+public class JoinCloudSongsList extends Activity {
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
-
+    
     private CharSequence mDrawerTitle;
     private CharSequence mTitle;
     private String[] mPlanetTitles;
@@ -76,7 +85,10 @@ public class JoinCloud extends Activity {
             selectItem(1);
         }
         
-        MainContentFragment.context = JoinCloud.this;
+        MainContentFragment.context = JoinCloudSongsList.this;
+        
+        
+
     }
 
     @Override
@@ -155,59 +167,174 @@ public class JoinCloud extends Activity {
         mDrawerToggle.onConfigurationChanged(newConfig);
     }
     
-    public void submitList(View v){
-    	Intent intent = new Intent(this, JoinCloudSongsList.class);
-    	startActivity(intent);
-    }
+    
     /**
      * Fragment that appears in the "content_frame", shows a planet
      */
-    public static class MainContentFragment extends Fragment {
+    public static class MainContentFragment extends Fragment implements OnCompletionListener, SeekBar.OnSeekBarChangeListener{
         public static final String ARG_OPTION_NUMBER = "option_number";
+        public static boolean firstLoad = true;
         public static Context context = null; 
+        ListView listView;
+        ArrayList<String> songList;
+        private SongsManager songManager;
+        private SeekBar songProgressBar;
+        private  MediaPlayer mp;
+        private ArrayList<HashMap<String, String>> songsList = new ArrayList<HashMap<String, String>>();
+        private TextView songLabel;
+        private Handler mHandler = new Handler();
+        private SongUtilities utils;
+        private int currentSongIndex = 0;
         
         public MainContentFragment() {
-            // Empty constructor required for fragment subclasses
         }
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.join_cloud_list, container, false);
+        	View rootView = inflater.inflate(R.layout.join_cloud_songs_list, container, false);
+        	listView = (ListView) rootView.findViewById(R.id.songs_list);
+        	songLabel = (TextView)rootView.findViewById(R.id.tv_song_name1);
+        	
+        	songProgressBar = (SeekBar) rootView.findViewById(R.id.songProgressBar);
+        	songProgressBar.setOnSeekBarChangeListener(this);
+        	
+        	mp = new MediaPlayer();
+    		songManager = new SongsManager();
+    		utils = new SongUtilities();
+    		
+    		mp.setOnCompletionListener(this);
+    		songsList = songManager.getPlayList();
+    		
+    		this.songList = new ArrayList<String>();
+    		for (int i=0; i<this.songsList.size(); i++){
+    			this.songList.add(songsList.get(i).get("songTitle"));
+    		}
+    		
+    		listView.setAdapter(new SongListAdapter(context, this.songList));
+    		listView.setItemsCanFocus(false);
+    		
+    		playSong(0);
+    		
+    		listView.setOnItemClickListener(new OnItemClickListener() {
+
+    			@Override
+    			public void onItemClick(AdapterView<?> parent, View view,
+    					int position, long id) {
+    				// getting listitem index
+    				playSong(position);
+    			}
+    		});
+    		
             int i = getArguments().getInt(ARG_OPTION_NUMBER);
             String option = getResources().getStringArray(R.array.options_array)[i];
             
-            if (option.equals("Home"))
+            if(!firstLoad)
             {
-            	Intent intent = new Intent(context, CloudListMain.class);
-            	getActivity().finish();
-            	startActivity(intent);
-            }
-            else if (option.equals("Start Cloud"))
-            {
-            	Intent intent = new Intent(context, StartCloud.class);
-            	getActivity().finish();
-            	startActivity(intent);
-            }
+	            if (option.equals("Home"))
+	            {
+	            	Intent intent = new Intent(context, CloudListMain.class);
+	            	getActivity().finish();
+	            	startActivity(intent);
+	            }
+	            else if (option.equals("Start Cloud"))
+	            {
+	            	Intent intent = new Intent(context, StartCloud.class);
+	            	getActivity().finish();
+	            	startActivity(intent);
+	            }
+	            else if (option.equals("Join Cloud"))
+	            {
+	            	Intent intent = new Intent(context, JoinCloud.class);
+	            	getActivity().finish();
+	            	startActivity(intent);
+	            }
+            }else
+            	firstLoad = false;
             
-//            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
-//    				getActivity());
-//     
-//    			// set title
-//    		alertDialogBuilder.setTitle("You selected: "+ option);
-//    
-//  			AlertDialog alertDialog = alertDialogBuilder.create();
-//     
-//  			alertDialog.show();
-//            
-//
-//            int imageId = getResources().getIdentifier(planet.toLowerCase(Locale.getDefault()),
-//                            "drawable", getActivity().getPackageName());
-//            ((ImageView) rootView.findViewById(R.id.image)).setImageResource(imageId);
-           getActivity().setTitle(option);
             return rootView;
         }
         
+        public void  playSong(int songIndex){
+    		// Play song
+    		try {
+            	mp.reset();
+    			mp.setDataSource(songsList.get(songIndex).get("songPath"));
+    			mp.prepare();
+    			mp.start();
+    			// Displaying Song title
+    			String songTitle = songsList.get(songIndex).get("songTitle");
+    			songLabel.setText(songTitle);
+    			
+    			// set Progress bar values
+    			songProgressBar.setProgress(0);
+    			songProgressBar.setMax(100);
+    			
+    			// Updating progress bar
+    			updateProgressBar();			
+    		} catch (IllegalArgumentException e) {
+    			e.printStackTrace();
+    		} catch (IllegalStateException e) {
+    			e.printStackTrace();
+    		} catch (IOException e) {
+    			e.printStackTrace();
+    		}
+    	}
+        
+        public void updateProgressBar() {
+            mHandler.postDelayed(mUpdateTimeTask, 100);        
+        }
+        
+        private Runnable mUpdateTimeTask = new Runnable() {
+ 		   public void run() {
+ 			   long totalDuration = mp.getDuration();
+ 			   long currentDuration = mp.getCurrentPosition();
+ 			  
+ 			   // Updating progress bar
+ 			   int progress = (int)(utils.getProgressPercentage(currentDuration, totalDuration));
+ 			   //Log.d("Progress", ""+progress);
+ 			   songProgressBar.setProgress(progress);
+ 			   
+ 			   // Running this thread after 100 milliseconds
+ 		       mHandler.postDelayed(this, 100);
+ 		   }
+ 		};
+        
+        @Override
+    	public void onProgressChanged(SeekBar arg0, int arg1, boolean arg2) {
+    	}
+
+    	@Override
+    	public void onStartTrackingTouch(SeekBar arg0) {
+    		mHandler.removeCallbacks(mUpdateTimeTask);
+    	}
+
+    	@Override
+    	public void onStopTrackingTouch(SeekBar seekBar) {
+    		mHandler.removeCallbacks(mUpdateTimeTask);
+    		int totalDuration = mp.getDuration();
+    		int currentPosition = utils.progressToTimer(seekBar.getProgress(), totalDuration);
+    		
+    		// forward or backward to certain seconds
+    		mp.seekTo(currentPosition);
+    		
+    		// update timer progress again
+    		updateProgressBar();
+    	}
+
+    	@Override
+    	public void onCompletion(MediaPlayer arg0) {
+    		if(currentSongIndex < (songsList.size() - 1)){
+				playSong(currentSongIndex + 1);
+				currentSongIndex = currentSongIndex + 1;
+			}else{
+				// play first song
+				playSong(0);
+				currentSongIndex = 0;
+			}
+    	}
         
     }
+
+	
 }

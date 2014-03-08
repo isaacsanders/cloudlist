@@ -29,28 +29,58 @@ public final class R {
         public static final int ic_drawer1=0x7f020002;
         public static final int ic_drawer2=0x7f020003;
         public static final int ic_launcher=0x7f020004;
+        public static final int img_seekbar_bg=0x7f020005;
+        public static final int img_seekbar_progress_blue=0x7f020006;
+        public static final int seek_handler=0x7f020007;
+        public static final int seekbar_progress=0x7f020008;
+        public static final int seekbar_progress_bg=0x7f020009;
     }
     public static final class id {
-        public static final int action_settings=0x7f09000c;
-        public static final int button1=0x7f090006;
-        public static final int button2=0x7f090007;
+        public static final int action_settings=0x7f090023;
+        public static final int button1=0x7f090022;
+        public static final int buttonJoin=0x7f090015;
+        public static final int buttonStart=0x7f090013;
+        public static final int buttonSubmit=0x7f090006;
+        public static final int button_dislike=0x7f09001d;
+        public static final int button_dislike1=0x7f09000f;
+        public static final int button_like=0x7f09001b;
+        public static final int button_like1=0x7f09000d;
         public static final int content_frame=0x7f090001;
         public static final int drawer_layout=0x7f090000;
-        public static final int layout1=0x7f090003;
+        public static final int iv_song_image=0x7f090019;
+        public static final int iv_song_image1=0x7f09000b;
+        public static final int layoutCloudList=0x7f09000a;
+        public static final int layoutCloudList1=0x7f090007;
+        public static final int layoutJoin=0x7f090003;
+        public static final int layoutMain=0x7f090014;
+        public static final int layoutStart=0x7f09001f;
         public static final int left_drawer=0x7f090002;
-        public static final int textView1=0x7f090009;
-        public static final int textView2=0x7f090008;
-        public static final int textViewCloud=0x7f090005;
-        public static final int textViewCloud1=0x7f09000a;
-        public static final int textViewJoin=0x7f090004;
-        public static final int textViewStart=0x7f09000b;
+        public static final int songProgressBar=0x7f09000e;
+        public static final int songs_list=0x7f090012;
+        public static final int tv_cloud=0x7f090005;
+        public static final int tv_cloud_join_list=0x7f090008;
+        public static final int tv_cloud_main=0x7f090016;
+        public static final int tv_cloud_name=0x7f090009;
+        public static final int tv_cloud_start=0x7f090021;
+        public static final int tv_join=0x7f090004;
+        public static final int tv_list_main=0x7f090017;
+        public static final int tv_song_dislikes=0x7f09001e;
+        public static final int tv_song_dislikes1=0x7f090010;
+        public static final int tv_song_likes=0x7f09001a;
+        public static final int tv_song_likes1=0x7f09000c;
+        public static final int tv_song_name=0x7f09001c;
+        public static final int tv_song_name1=0x7f090011;
+        public static final int tv_song_number=0x7f090018;
+        public static final int tv_start=0x7f090020;
     }
     public static final class layout {
         public static final int cloud_list_main=0x7f030000;
         public static final int drawer_list_item=0x7f030001;
         public static final int join_cloud_list=0x7f030002;
-        public static final int main_content=0x7f030003;
-        public static final int start_cloud_list=0x7f030004;
+        public static final int join_cloud_songs_list=0x7f030003;
+        public static final int main_content=0x7f030004;
+        public static final int song_row=0x7f030005;
+        public static final int start_cloud_list=0x7f030006;
     }
     public static final class menu {
         public static final int cloud_list_main=0x7f080000;

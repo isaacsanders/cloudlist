@@ -7,6 +7,7 @@
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="19" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -35,6 +36,14 @@
             android:name=".StartCloud">
             <intent-filter>
                 <action android:name="com.example.StartCloud" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:label="Join Cloud Songs List"
+            android:name=".JoinCloudSongsList">
+            <intent-filter>
+                <action android:name="com.example.JoinCloudSongsList" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
