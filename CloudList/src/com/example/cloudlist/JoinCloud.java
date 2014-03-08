@@ -156,8 +156,7 @@ public class JoinCloud extends Activity {
     }
     
     public void submitList(View v){
-    	Intent intent = new Intent(this, JoinCloudSongsList.class);
-    	startActivity(intent);
+    	
     }
     /**
      * Fragment that appears in the "content_frame", shows a planet

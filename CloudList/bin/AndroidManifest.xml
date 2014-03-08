@@ -41,7 +41,7 @@
         </activity>
         <activity
             android:label="Join Cloud Songs List"
-            android:name=".JoinCloudSongsList">
+            android:name=".StartCloudSongs">
             <intent-filter>
                 <action android:name="com.example.JoinCloudSongsList" />
                 <category android:name="android.intent.category.DEFAULT" />

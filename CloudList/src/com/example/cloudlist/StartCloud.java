@@ -156,7 +156,8 @@ public class StartCloud extends Activity {
     }
     
     public void onStart(View v){
-    	//System.out.println("Join Cloud");
+    	Intent intent = new Intent(this, StartCloudSongs.class);
+    	startActivity(intent);
     }
     /**
      * Fragment that appears in the "content_frame", shows a planet

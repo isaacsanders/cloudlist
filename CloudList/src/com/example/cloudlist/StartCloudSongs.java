@@ -30,7 +30,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
 
-public class JoinCloudSongsList extends Activity {
+public class StartCloudSongs extends Activity {
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
@@ -82,10 +82,10 @@ public class JoinCloudSongsList extends Activity {
         mDrawerLayout.setDrawerListener(mDrawerToggle);
 
         if (savedInstanceState == null) {
-            selectItem(1);
+            selectItem(2);
         }
         
-        MainContentFragment.context = JoinCloudSongsList.this;
+        MainContentFragment.context = StartCloudSongs.this;
         
         
 
@@ -192,7 +192,7 @@ public class JoinCloudSongsList extends Activity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
-        	View rootView = inflater.inflate(R.layout.join_cloud_songs_list, container, false);
+        	View rootView = inflater.inflate(R.layout.start_cloud_songs, container, false);
         	listView = (ListView) rootView.findViewById(R.id.songs_list);
         	songLabel = (TextView)rootView.findViewById(R.id.tv_song_name1);
         	
